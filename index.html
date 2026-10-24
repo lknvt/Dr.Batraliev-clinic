@@ -201,81 +201,89 @@ form.bf .f{margin-bottom:14px}
 .v2 footer{padding:40px 0;text-align:center;color:var(--mut);font-size:14px}
 
 /* =====================================================
-   ВАРИАНТ 3 — «Тех-журнал»: крупная типографика, синий акцент
+   ВАРИАНТ 3 — «Бенто»: карточки-плитки, фиолетовый и лайм
    ===================================================== */
-.v3{--bg:#f2f1ec;--ink:#0b0b0f;--mut:#5b5b66;--ac:#2f4bff;--line:#0b0b0f;--fb:#0b0b0f;--fbg:#fff;--mouth:#14141c;--gum:#c46a78;--r:0px;--fr:0px;
-  background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.55}
-.v3 h1,.v3 h2,.v3 h3{font-family:Unbounded,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
-.v3 nav{position:sticky;top:56px;z-index:50;background:var(--bg);border-bottom:2px solid var(--ink)}
-.v3 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.v3 .brand{font:800 15px Unbounded;text-decoration:none;display:flex;gap:10px;align-items:center}
+.v3{--bg:#f4f2ec;--ink:#12141c;--mut:#666a77;--ac:#6d4aff;--ac2:#4b2fd6;--lime:#d8f26b;--card:#fff;--fb:#dcd8cc;--fbg:#fff;--mouth:#2a1218;--gum:#d9798a;--r:30px;--fr:16px;
+  background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.55;padding-bottom:20px}
+.v3 h1,.v3 h2,.v3 h3{font-family:Unbounded,sans-serif;margin:0;line-height:1.08;letter-spacing:-.025em;font-weight:600}
+.v3 nav{position:sticky;top:56px;z-index:50;padding:12px 0}
+.v3 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px;padding:0 10px 0 20px;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-radius:999px;box-shadow:0 8px 30px -16px rgba(18,20,28,.3)}
+.v3 .brand{display:flex;align-items:center;gap:10px;font:600 15px Unbounded;text-decoration:none}
 .v3 .brand .logo-mark{font-size:26px;color:var(--ac);stroke-width:2}
-.v3 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
-.v3 nav ul a{text-decoration:none;background:linear-gradient(var(--ac),var(--ac)) 0 100%/0 2px no-repeat;transition:background-size .3s}
-.v3 nav ul a:hover{background-size:100% 2px}
+.v3 nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.v3 nav ul a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;transition:.2s}
+.v3 nav ul a:hover{background:var(--bg)}
 @media (max-width:860px){.v3 nav ul{display:none}}
-.v3 .btn{border-radius:0;border:2px solid var(--ink);background:var(--ink);color:#fff;box-shadow:5px 5px 0 var(--ac)}
-.v3 .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ac)}
-.v3 .btn.alt{background:#fff;color:var(--ink)}
-.v3 .hero{padding:70px 0 0;border-bottom:2px solid var(--ink)}
-.v3 .hero h1{font-size:clamp(30px,6.6vw,92px);font-weight:800;text-transform:uppercase}
-.v3 .hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
-.v3 .hero h1 .b{color:var(--ac)}
-.v3 .hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin:44px 0 60px}
-.v3 .hero p{max-width:480px;font-size:19px;margin:0}
-.v3 .cta{display:flex;gap:14px;flex-wrap:wrap}
-.v3 .ticker{background:var(--ac);color:#fff;border-top:2px solid var(--ink);overflow:hidden;white-space:nowrap;font:600 15px Unbounded;padding:16px 0}
-.v3 .ticker div{display:inline-block;animation:tick 28s linear infinite}
-.v3 .ticker span{margin:0 26px}
-@keyframes tick{to{transform:translateX(-50%)}}
-.v3 section{padding:90px 0;border-bottom:2px solid var(--ink)}
-.v3 .sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:46px}
-.v3 .sec-h h2{font-size:clamp(28px,4.6vw,56px);text-transform:uppercase}
-.v3 .sec-h span{font:500 14px Onest;color:var(--mut)}
-.v3 .list details{border-top:2px solid var(--ink)}
-.v3 .list details:last-child{border-bottom:2px solid var(--ink)}
-.v3 .list summary{display:grid;grid-template-columns:70px 1fr auto;gap:16px;align-items:center;padding:24px 0;font:600 clamp(18px,2.6vw,30px) Unbounded;transition:.25s}
-.v3 .list summary i{font:500 14px Onest;font-style:normal;color:var(--ac)}
-.v3 .list summary::after{content:"→";transition:.3s;font-family:Onest}
-.v3 .list details[open] summary{color:var(--ac)}
-.v3 .list details[open] summary::after{transform:rotate(90deg)}
-.v3 .list summary:hover{padding-left:14px}
-.v3 .list details p{margin:0 0 26px 86px;max-width:620px;color:var(--mut)}
-@media (max-width:600px){.v3 .list details p{margin-left:0}.v3 .list summary{grid-template-columns:40px 1fr auto}}
-.v3 .ceph{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-@media (max-width:860px){.v3 .ceph{grid-template-columns:1fr}}
-.v3 .xray{background:#05060a;border:2px solid var(--ink);padding:10px;box-shadow:8px 8px 0 var(--ac)}
-.v3 .xray svg{display:block;width:100%}
-.v3 .xray .pt{cursor:pointer}
-.v3 .xray .pt circle{fill:#5eead4;transition:.2s}
-.v3 .xray .pt:hover circle,.v3 .xray .pt.on circle{fill:#fff;r:9}
-.v3 .xray .pt text{fill:#5eead4;font:600 11px Onest}
-.v3 .cap{min-height:150px;border:2px solid var(--ink);background:#fff;padding:26px}
-.v3 .cap h3{font-size:20px;margin-bottom:10px;color:var(--ac)}
-.v3 .cap p{margin:0}
-.v3 .quiz{border:2px solid var(--ink);background:#fff;padding:clamp(22px,4vw,46px);box-shadow:8px 8px 0 var(--ink)}
-.v3 .quiz h3{font-size:clamp(20px,2.6vw,30px);margin-bottom:24px}
-.v3 .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:600px){.v3 .opts{grid-template-columns:1fr}}
-.v3 .opts button{text-align:left;padding:18px;border:2px solid var(--ink);background:var(--bg);cursor:pointer;font-weight:500;transition:.2s}
-.v3 .opts button:hover{background:var(--ac);color:#fff;transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
-.v3 .res b{display:block;font:800 clamp(22px,3vw,34px) Unbounded;color:var(--ac);margin:8px 0 12px}
-.v3 .res .cta{margin-top:22px}
-.v3 .ba{border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ac)}
-.v3 .ba-note{margin-top:20px}
-.v3 .faq details{border-top:2px solid var(--ink);padding:20px 0}
-.v3 .faq details:last-child{border-bottom:2px solid var(--ink)}
-.v3 .faq summary{display:flex;justify-content:space-between;gap:16px;font:600 18px Unbounded}
-.v3 .faq summary::after{content:"+";color:var(--ac);transition:.3s}
-.v3 .faq details[open] summary::after{transform:rotate(45deg)}
-.v3 .faq p{margin:12px 0 0;color:var(--mut);max-width:680px}
-.v3 .book{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-@media (max-width:860px){.v3 .book{grid-template-columns:1fr}}
-.v3 .book h2{font-size:clamp(30px,5vw,64px);text-transform:uppercase}
-.v3 .book .big{font:800 clamp(24px,3.6vw,40px) Unbounded;margin:26px 0 8px;display:block;text-decoration:none;color:var(--ac)}
-.v3 form.book-f{background:#fff;border:2px solid var(--ink);padding:30px;box-shadow:8px 8px 0 var(--ink)}
-.v3 form .btn{width:100%}
-.v3 footer{padding:30px 0;font-size:14px;color:var(--mut)}
+.v3 .btn{background:var(--ink);color:#fff;padding:14px 24px}
+.v3 .btn:hover{background:var(--ac)}
+.v3 .btn.lime{background:var(--lime);color:var(--ink)}
+.v3 .btn.lime:hover{background:#fff}
+.v3 .btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.v3 .btn.sm{padding:10px 20px;font-size:14px}
+.v3 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.v3 .tile{position:relative;background:var(--card);border-radius:var(--r);padding:30px;overflow:hidden;transition:transform .25s ease,box-shadow .25s}
+.v3 .tile.tilt{transform-style:preserve-3d;will-change:transform}
+.v3 .s3{grid-column:span 3}.v3 .s4{grid-column:span 4}.v3 .s5{grid-column:span 5}.v3 .s6{grid-column:span 6}.v3 .s7{grid-column:span 7}.v3 .s8{grid-column:span 8}.v3 .s12{grid-column:span 12}
+.v3 .r2{grid-row:span 2}
+@media (max-width:900px){.v3 .s3,.v3 .s4,.v3 .s5,.v3 .s6,.v3 .s7,.v3 .s8{grid-column:span 12}.v3 .r2{grid-row:auto}}
+.v3 .tile.vio{background:radial-gradient(500px 340px at 85% 0,#9a7dff,transparent 70%),linear-gradient(150deg,#5a3cf0,#2a1b8f);color:#fff}
+.v3 .tile.lm{background:var(--lime)}
+.v3 .tile.dk{background:var(--ink);color:#fff}
+.v3 .chipk{display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.16);font-size:13px;font-weight:500;margin-bottom:22px}
+.v3 .main h1{font-size:clamp(34px,5.4vw,70px)}
+.v3 .main h1 em{font-style:normal;color:var(--lime)}
+.v3 .main p{max-width:460px;opacity:.85;font-size:18px;margin:24px 0 30px}
+.v3 .main .cta{display:flex;gap:12px;flex-wrap:wrap}
+.v3 .main .big-tooth{position:absolute;right:-50px;bottom:-60px;width:340px;height:340px;color:rgba(255,255,255,.1);stroke-width:.5;pointer-events:none;animation:spin 24s linear infinite alternate}
+@keyframes spin{to{transform:rotate(14deg) scale(1.08)}}
+.v3 .phone{display:flex;flex-direction:column;justify-content:space-between;min-height:200px;text-decoration:none}
+.v3 .phone small{font-size:14px;font-weight:500;opacity:.7}
+.v3 .phone b{font:600 clamp(24px,3vw,34px) Unbounded;letter-spacing:-.03em}
+.v3 .phone .arr{position:absolute;right:24px;top:22px;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:22px;transition:.3s}
+.v3 .phone:hover .arr{transform:rotate(45deg);background:var(--ac)}
+.v3 .ig b{display:block;font:600 clamp(40px,5vw,60px) Unbounded;letter-spacing:-.04em;color:var(--lime)}
+.v3 .ig p{margin:6px 0 20px;opacity:.7;font-size:14px}
+.v3 .sec-t{font-size:clamp(26px,3.6vw,44px);margin:70px 4px 24px}
+.v3 .sec-t span{color:var(--ac)}
+.v3 .svc h3{font-size:22px;margin:56px 0 10px}
+.v3 .svc p{margin:0;color:var(--mut);font-size:15px}
+.v3 .svc .num{position:absolute;top:22px;left:26px;font:600 13px Unbounded;color:var(--ac);background:rgba(109,74,255,.1);padding:5px 12px;border-radius:999px}
+.v3 .svc:hover{box-shadow:0 30px 50px -28px rgba(109,74,255,.55)}
+.v3 .svc.vio h3,.v3 .svc.dk h3{margin-top:56px}
+.v3 .svc.vio p,.v3 .svc.dk p{color:rgba(255,255,255,.75)}
+.v3 .svc.vio .num,.v3 .svc.dk .num{background:rgba(255,255,255,.16);color:#fff}
+.v3 .svc.lm p{color:rgba(18,20,28,.7)}.v3 .svc.lm .num{background:rgba(18,20,28,.1);color:var(--ink)}
+.v3 .plan{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media (max-width:900px){.v3 .plan{grid-template-columns:1fr}}
+.v3 .plan h3{font-size:clamp(20px,2.4vw,28px);margin-bottom:8px}
+.v3 .plan>div>p{color:var(--mut);margin:0 0 20px}
+.v3 .chips{display:flex;flex-wrap:wrap;gap:10px}
+.v3 .chips button{padding:11px 18px;border-radius:999px;border:2px solid var(--fb);background:#fff;cursor:pointer;font-weight:500;transition:.2s}
+.v3 .chips button:hover{border-color:var(--ac)}
+.v3 .chips button[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.v3 .out{background:var(--bg);border-radius:22px;padding:24px}
+.v3 .out ol{list-style:none;counter-reset:o;margin:0 0 20px;padding:0}
+.v3 .out li{counter-increment:o;display:flex;gap:14px;align-items:flex-start;padding:10px 0;animation:pop .35s ease}
+@keyframes pop{from{opacity:0;transform:translateX(-10px)}}
+.v3 .out li::before{content:counter(o);flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--lime);font:600 13px Unbounded}
+.v3 .out li b{display:block}.v3 .out li span{color:var(--mut);font-size:14px}
+.v3 .ba{border:0;box-shadow:none}
+.v3 .tile .ba-note{margin:14px 4px 0}
+.v3 .faq{display:grid;grid-template-columns:1fr 1.4fr;gap:34px}
+@media (max-width:900px){.v3 .faq{grid-template-columns:1fr}}
+.v3 .faq h3{font-size:clamp(24px,3vw,38px)}
+.v3 .faq details{border-bottom:1px solid var(--fb);padding:18px 0}
+.v3 .faq details:first-child{padding-top:0}
+.v3 .faq summary{display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:17px}
+.v3 .faq summary::after{content:"+";display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:var(--bg);transition:.3s}
+.v3 .faq details[open] summary::after{transform:rotate(45deg);background:var(--lime)}
+.v3 .faq p{margin:10px 0 0;color:var(--mut)}
+.v3 .book-f h3{font-size:clamp(22px,2.6vw,32px);margin-bottom:22px}
+.v3 .book-f .btn{width:100%;background:var(--ac)}
+.v3 .book-f .btn:hover{background:var(--ink)}
+.v3 .addr h3{font-size:22px;margin-bottom:10px}
+.v3 .addr p{margin:0 0 18px;opacity:.8}
+.v3 footer{padding:34px 0 20px;font-size:14px;color:var(--mut)}
 .v3 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </style>
 </head>
@@ -291,7 +299,7 @@ form.bf .f{margin-bottom:14px}
   <div class="sw-tabs">
     <button role="tab" data-v="v1" aria-selected="true"><b>1</b>Люкс</button>
     <button role="tab" data-v="v2" aria-selected="false"><b>2</b>Свежий</button>
-    <button role="tab" data-v="v3" aria-selected="false"><b>3</b>Тех-журнал</button>
+    <button role="tab" data-v="v3" aria-selected="false"><b>3</b>Бенто</button>
   </div>
   <span class="sw-hint">клавиши 1 · 2 · 3</span>
 </header>
@@ -470,114 +478,80 @@ form.bf .f{margin-bottom:14px}
   <footer>© Dr.Batraliev Clinic · Концепт дизайна · вариант 2</footer>
 </main>
 
-<!-- ============ ВАРИАНТ 3 — ТЕХ-ЖУРНАЛ ============ -->
+<!-- ============ ВАРИАНТ 3 — БЕНТО ============ -->
 <main class="v v3" id="v3" hidden>
   <nav><div class="wrap">
-    <a class="brand" href="#v3"><svg class="logo-mark"><use href="#tooth"/></svg>DR.BATRALIEV</a>
-    <ul><li><a href="#v3-svc">Услуги</a></li><li><a href="#v3-tech">Технологии</a></li><li><a href="#v3-quiz">Подбор</a></li><li><a href="#v3-faq">FAQ</a></li></ul>
-    <a class="btn" style="padding:10px 18px;font-size:14px;box-shadow:3px 3px 0 var(--ac)" href="#v3-book">Запись</a>
+    <a class="brand" href="#v3"><svg class="logo-mark"><use href="#tooth"/></svg>Dr.Batraliev</a>
+    <ul><li><a href="#v3-svc">Услуги</a></li><li><a href="#v3-plan">План</a></li><li><a href="#v3-ba">Результаты</a></li><li><a href="#v3-faq">Вопросы</a></li></ul>
+    <a class="btn sm" href="#v3-book">Записаться</a>
   </div></nav>
 
-  <div class="hero">
-    <div class="wrap">
-      <h1 class="rv">Ортодонтия <span class="o">без</span> <span class="b">компромиссов</span></h1>
-      <div class="row">
-        <p class="rv">Dr.Batraliev Clinic — эстетика, технологии и совершенство в каждой детали. Брекеты и элайнеры в Бишкеке.</p>
-        <div class="cta rv"><a class="btn" href="#v3-quiz">Подобрать лечение →</a><a class="btn alt" href="#v3-book">Записаться</a></div>
+  <div class="wrap">
+    <div class="bento" style="margin-top:8px">
+      <div class="tile vio main s8 r2 rv">
+        <svg class="logo-mark big-tooth" aria-hidden="true"><use href="#tooth"/></svg>
+        <span class="chipk">Dr.Batraliev Clinic · Бишкек</span>
+        <h1>Эстетика.<br>Технологии.<br><em>Совершенство.</em></h1>
+        <p>Брекеты, элайнеры и эстетическая стоматология. Составим понятный план и покажем путь к вашей улыбке.</p>
+        <div class="cta"><a class="btn lime" href="#v3-plan">Собрать свой план</a><a class="btn ghost" href="#v3-book">Записаться</a></div>
       </div>
+      <a class="tile lm phone s4 rv" href="tel:+996555609609"><small>Позвонить или написать в WhatsApp</small><b>0555<br>609 609</b><span class="arr">↗</span></a>
+      <div class="tile dk ig s4 rv"><b data-count="55" data-suf=" тыс.">0</b><p>подписчиков в Instagram · 271 публикация</p><a class="btn lime sm" href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">@dr.batraliev</a></div>
     </div>
-    <div class="ticker" aria-hidden="true"><div>
-      <span>БРЕКЕТЫ</span><span>✦</span><span>ЭЛАЙНЕРЫ</span><span>✦</span><span>ДЕТСКАЯ ОРТОДОНТИЯ</span><span>✦</span><span>ЦЕФАЛОМЕТРИЯ</span><span>✦</span><span>ЭСТЕТИКА</span><span>✦</span>
-      <span>БРЕКЕТЫ</span><span>✦</span><span>ЭЛАЙНЕРЫ</span><span>✦</span><span>ДЕТСКАЯ ОРТОДОНТИЯ</span><span>✦</span><span>ЦЕФАЛОМЕТРИЯ</span><span>✦</span><span>ЭСТЕТИКА</span><span>✦</span>
-    </div></div>
-  </div>
 
-  <section id="v3-svc"><div class="wrap">
-    <div class="sec-h rv"><h2>Услуги</h2><span>Нажмите на строку, чтобы раскрыть</span></div>
-    <div class="list rv">
-      <details open><summary><i>01</i>Брекеты</summary><p>Металлические, керамические, сапфировые. Подбираем систему под прикус, бюджет и образ жизни.</p></details>
-      <details><summary><i>02</i>Элайнеры</summary><p>Прозрачные капы с цифровым планом движения зубов. Вы видите итог заранее.</p></details>
-      <details><summary><i>03</i>Детская ортодонтия</summary><p>Ранняя коррекция прикуса и направление роста челюстей — мягко и своевременно.</p></details>
-      <details><summary><i>04</i>Диагностика</summary><p>Телерентген, КТ, фотопротокол. Лечение начинается с точных данных.</p></details>
-      <details><summary><i>05</i>Эстетика</summary><p>Виниры и реставрации: естественная форма, цвет и симметрия.</p></details>
+    <h2 class="sec-t rv" id="v3-svc">Что мы <span>делаем</span></h2>
+    <div class="bento">
+      <article class="tile svc tilt vio s6 rv"><span class="num">01</span><h3>Брекеты</h3><p>Металлические, керамические и сапфировые системы. Подбираем под прикус и образ жизни.</p></article>
+      <article class="tile svc tilt s3 rv"><span class="num">02</span><h3>Элайнеры</h3><p>Прозрачные капы, почти незаметные.</p></article>
+      <article class="tile svc tilt lm s3 rv"><span class="num">03</span><h3>Дети</h3><p>Мягкая коррекция прикуса.</p></article>
+      <article class="tile svc tilt s4 rv"><span class="num">04</span><h3>Диагностика</h3><p>Телерентген, КТ и фотопротокол — план строится на данных.</p></article>
+      <article class="tile svc tilt dk s4 rv"><span class="num">05</span><h3>Эстетика</h3><p>Виниры и реставрации с естественной формой и цветом.</p></article>
+      <article class="tile svc tilt s4 rv"><span class="num">06</span><h3>Ретенция</h3><p>Ретейнеры и контроль, чтобы результат остался надолго.</p></article>
     </div>
-  </div></section>
 
-  <section id="v3-tech"><div class="wrap">
-    <div class="sec-h rv"><h2>Точки роста</h2><span>Наведите на точки снимка</span></div>
-    <div class="ceph">
-      <div class="xray rv">
-        <svg viewBox="0 0 400 300" role="img" aria-label="Схема телерентгенограммы с интерактивными точками">
-          <defs><radialGradient id="rg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#1b2a3a"/><stop offset="1" stop-color="#05060a"/></radialGradient></defs>
-          <rect width="400" height="300" fill="url(#rg)"/>
-          <g fill="none" stroke="#9fb4c9" stroke-opacity=".75" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M70 120c0-60 60-95 120-90 55 4 95 38 100 80 3 24-8 40-22 52"/>
-            <path d="M120 150c-8 34 4 58 30 70 20 9 44 8 62-4"/>
-            <path d="M232 168c14-6 36-4 50 6 10 8 8 24-6 30-14 5-34 2-46-6"/>
-            <path d="M286 114c18 6 52 18 58 46 4 18-10 28-26 24"/>
-            <path d="M150 232c6 30 20 50 38 60"/>
-          </g>
-          <g fill="none" stroke="#5eead4" stroke-opacity=".35" stroke-dasharray="4 5"><path d="M120 120L290 112L276 196L150 232"/></g>
-          <g class="pts">
-            <g class="pt on" data-t="N — Nasion|Опорная точка основания черепа. От неё строятся линии для оценки положения челюстей." transform="translate(290 112)"><circle r="6"/><text x="12" y="4">N</text></g>
-            <g class="pt" data-t="S — Sella|Центр турецкого седла. Вместе с N задаёт базовую плоскость анализа." transform="translate(120 120)"><circle r="6"/><text x="-14" y="-10">S</text></g>
-            <g class="pt" data-t="A — подносовая точка|Показывает положение верхней челюсти относительно основания черепа." transform="translate(276 196)"><circle r="6"/><text x="12" y="4">A</text></g>
-            <g class="pt" data-t="B — подбородочная|Показывает положение нижней челюсти. Разница A–B помогает определить тип прикуса." transform="translate(150 232)"><circle r="6"/><text x="-16" y="16">B</text></g>
-            <g class="pt" data-t="Go — угол челюсти|Определяет наклон нижней челюсти и направление её роста." transform="translate(110 188)"><circle r="6"/><text x="-26" y="4">Go</text></g>
-          </g>
-        </svg>
-      </div>
-      <div class="cap rv" id="cap"><h3>N — Nasion</h3><p>Опорная точка основания черепа. От неё строятся линии для оценки положения челюстей.</p></div>
-    </div>
-  </div></section>
-
-  <section id="v3-quiz"><div class="wrap" style="max-width:900px">
-    <div class="sec-h rv"><h2>Подбор лечения</h2><span>1 вопрос · 10 секунд</span></div>
-    <div class="quiz rv" data-quiz>
-      <div class="q">
-        <h3>Что вас беспокоит больше всего?</h3>
-        <div class="opts">
-          <button data-r="Брекеты|Исправят скученность и неровные зубы, подойдут при сложных случаях и любом возрасте.">Зубы растут неровно</button>
-          <button data-r="Элайнеры|Прозрачные капы почти незаметны — удобны, если важна эстетика на работе и в жизни.">Хочу незаметное лечение</button>
-          <button data-r="Коррекция прикуса|Нужна диагностика: телерентген и осмотр покажут, какая система или аппарат подойдёт.">Проблемы с прикусом</button>
-          <button data-r="Детская ортодонтия|Ранняя консультация поможет вовремя направить рост челюстей и избежать сложностей.">Подбираю лечение ребёнку</button>
+    <h2 class="sec-t rv" id="v3-plan">Соберите <span>свой план</span></h2>
+    <div class="tile plan rv" data-plan>
+      <div>
+        <h3>Что для вас важно?</h3>
+        <p>Отметьте всё, что подходит — справа появится ваш маршрут.</p>
+        <div class="chips">
+          <button aria-pressed="false" data-s="Брекеты|Исправят скученность и неровные зубы, подойдут и при сложных случаях.">Неровные зубы</button>
+          <button aria-pressed="false" data-s="Коррекция прикуса|Диагностика покажет, какая система или аппарат нужны.">Проблемы с прикусом</button>
+          <button aria-pressed="false" data-s="Элайнеры|Прозрачные капы почти незаметны на работе и в жизни.">Хочу незаметно</button>
+          <button aria-pressed="false" data-s="Детская ортодонтия|Ранняя коррекция направляет рост челюстей.">Лечу ребёнка</button>
+          <button aria-pressed="false" data-s="Эстетика улыбки|Виниры и реставрации для идеальной формы и цвета.">Красота улыбки</button>
         </div>
       </div>
-      <div class="res" hidden>
-        <span style="font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em">Вам может подойти</span>
-        <b></b><p></p>
-        <div class="cta"><a class="btn" href="#v3-book" data-pick>Записаться на консультацию</a><button class="btn alt" data-again>Пройти заново</button></div>
+      <div class="out">
+        <ol></ol>
+        <a class="btn" href="#v3-book" data-send>Обсудить план в WhatsApp</a>
       </div>
     </div>
-  </div></section>
 
-  <section id="v3-ba"><div class="wrap">
-    <div class="sec-h rv"><h2>До / После</h2><span>Потяните ползунок</span></div>
-    <div class="ba rv" data-ba></div>
-    <p class="ba-note">Иллюстрация. Здесь будут реальные кейсы клиники из Instagram.</p>
-  </div></section>
+    <h2 class="sec-t rv" id="v3-ba">Результат <span>до и после</span></h2>
+    <div class="tile s12 rv"><div class="ba" data-ba></div><p class="ba-note">Потяните ползунок. Иллюстрация — сюда встанут реальные кейсы из Instagram клиники.</p></div>
 
-  <section id="v3-faq" class="faq"><div class="wrap" style="max-width:900px">
-    <div class="sec-h rv"><h2>FAQ</h2></div>
-    <details><summary>Больно ли носить брекеты?</summary><p>В первые дни возможен дискомфорт — он проходит. Врач подскажет, как его смягчить.</p></details>
-    <details><summary>Сколько длится лечение?</summary><p>От нескольких месяцев до двух лет. Точный срок — после диагностики.</p></details>
-    <details><summary>С какого возраста начинать?</summary><p>Консультацию стоит пройти уже в детском возрасте.</p></details>
-    <details><summary>Нужна ли запись?</summary><p>Да, приём по записи — напишите в WhatsApp или позвоните.</p></details>
-  </div></section>
-
-  <section id="v3-book" style="border-bottom:0"><div class="wrap book">
-    <div class="rv">
-      <h2>Начнём<br>с консультации</h2>
-      <a class="big" href="tel:+996555609609">0555 609 609</a>
-      <p>117 ул. Медерова, Бишкек<br><a href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">instagram.com/dr.batraliev</a></p>
+    <div class="tile faq s12 rv" id="v3-faq" style="margin-top:16px">
+      <div><h3>Частые вопросы</h3></div>
+      <div>
+        <details open><summary>Больно ли носить брекеты?</summary><p>В первые дни возможен дискомфорт — он проходит. Врач подскажет, как его смягчить.</p></details>
+        <details><summary>Сколько длится лечение?</summary><p>От нескольких месяцев до двух лет. Точный срок — после диагностики.</p></details>
+        <details><summary>С какого возраста начинать?</summary><p>Консультацию стоит пройти уже в детском возрасте.</p></details>
+        <details><summary>Нужна ли запись?</summary><p>Да, приём по записи — напишите в WhatsApp или позвоните.</p></details>
+      </div>
     </div>
-    <form class="bf book-f rv" data-wa>
-      <div class="f"><label>Имя</label><input name="name" required autocomplete="name"></div>
-      <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
-      <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Коррекция прикуса</option><option>Детская ортодонтия</option><option>Эстетика зубов</option></select></div>
-      <button class="btn">Отправить в WhatsApp →</button>
-    </form>
-  </div></section>
+
+    <div class="bento" id="v3-book" style="margin-top:16px">
+      <form class="tile bf book-f s7 rv" data-wa>
+        <h3>Запишитесь на консультацию</h3>
+        <div class="f"><label>Имя</label><input name="name" required autocomplete="name"></div>
+        <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
+        <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Коррекция прикуса</option><option>Детская ортодонтия</option><option>Эстетика улыбки</option></select></div>
+        <button class="btn">Отправить в WhatsApp →</button>
+      </form>
+      <div class="tile vio addr s5 rv"><h3>Как нас найти</h3><p>117 ул. Медерова,<br>Бишкек, Кыргызстан</p><p>📞 <a href="tel:+996555609609">0555 609 609</a></p><a class="btn lime sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dr.Batraliev+Clinic+Bishkek">Открыть на карте</a></div>
+    </div>
+  </div>
   <footer><div class="wrap"><span>© Dr.Batraliev Clinic</span><span>Концепт дизайна · вариант 3</span></div></footer>
 </main>
 
@@ -643,29 +617,30 @@ form.bf .f{margin-bottom:14px}
     })});
   });
 
-  /* --- подпись к точкам снимка (вариант 3) --- */
-  var cap=$('#cap');
-  $$('.pt').forEach(function(p){
-    function pick(){
-      $$('.pt').forEach(function(x){x.classList.toggle('on',x===p)});
-      var t=p.dataset.t.split('|');cap.innerHTML='<h3></h3><p></p>';$('h3',cap).textContent=t[0];$('p',cap).textContent=t[1];
-    }
-    p.addEventListener('mouseenter',pick);p.addEventListener('click',pick);
+  /* --- наклон карточек и конструктор плана (вариант 3) --- */
+  $$('.v3 .tilt').forEach(function(c){
+    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(800px) rotateX('+(-y*6)+'deg) rotateY('+(x*8)+'deg) translateY(-4px)'});
+    c.addEventListener('pointerleave',function(){c.style.transform=''});
   });
-
-  /* --- квиз (вариант 3) --- */
-  $$('[data-quiz]').forEach(function(q){
-    var qs=$('.q',q),res=$('.res',q),sel=null;
-    $$('.opts button',q).forEach(function(b){b.addEventListener('click',function(){
-      var r=b.dataset.r.split('|');sel=r[0];
-      $('b',res).textContent=r[0];$('p',res).textContent=r[1];
-      qs.hidden=true;res.hidden=false;
-    })});
-    $('[data-again]',q).addEventListener('click',function(){res.hidden=true;qs.hidden=false});
-    $('[data-pick]',q).addEventListener('click',function(){
-      var s=$('#v3 select[name=service]');if(!s||!sel)return;
-      $$('option',s).forEach(function(o){if(o.textContent===sel)s.value=o.value});
+  $$('[data-plan]').forEach(function(p){
+    var ol=$('ol',p),chips=$$('.chips button',p);
+    function draw(){
+      ol.innerHTML='';
+      var items=[['Консультация и осмотр','Знакомимся, обсуждаем цели и ожидания.']];
+      chips.forEach(function(b){if(b.getAttribute('aria-pressed')==='true')items.push(b.dataset.s.split('|'))});
+      items.splice(1,0,['Диагностика','Телерентген, фото и анализ прикуса.']);
+      items.push(['Контроль и ретенция','Закрепляем результат, чтобы он остался с вами.']);
+      items.forEach(function(it){var li=document.createElement('li'),d=document.createElement('div'),b=document.createElement('b'),s=document.createElement('span');b.textContent=it[0];s.textContent=it[1];d.appendChild(b);d.appendChild(s);li.appendChild(d);ol.appendChild(li)});
+      var names=items.slice(2,-1).map(function(i){return i[0]});
+      p._names=names;
+    }
+    chips.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');draw()})});
+    $('[data-send]',p).addEventListener('click',function(e){
+      e.preventDefault();
+      var t='Здравствуйте! Хочу обсудить план лечения'+(p._names&&p._names.length?': '+p._names.join(', '):'')+'.';
+      window.open('https://wa.me/996555609609?text='+encodeURIComponent(t),'_blank','noopener');
     });
+    draw();
   });
 
   /* --- запись через WhatsApp --- */

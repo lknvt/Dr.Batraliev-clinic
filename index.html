@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr.Batraliev Clinic — 3 варианта дизайна</title>
+<meta name="description" content="Три интерактивных концепта сайта стоматологической клиники Dr.Batraliev Clinic, Бишкек">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0b0e14;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+[hidden]{display:none!important}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important;scroll-behavior:auto!important}}
+
+/* ====== ПЕРЕКЛЮЧАТЕЛЬ ДИЗАЙНОВ (всегда сверху) ====== */
+.sw{position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;display:flex;align-items:center;gap:14px;padding:0 16px;background:rgba(10,12,16,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12);font-family:Inter,system-ui,sans-serif;color:#fff}
+.sw-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;white-space:nowrap}
+.sw-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1}
+.sw-tabs::-webkit-scrollbar{display:none}
+.sw button{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:transparent;cursor:pointer;font-size:14px;white-space:nowrap;transition:.2s}
+.sw button b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.14);font-size:11px}
+.sw button:hover{border-color:#fff}
+.sw button[aria-selected=true]{background:#fff;color:#0a0c10;border-color:#fff}
+.sw button[aria-selected=true] b{background:#0a0c10;color:#fff}
+.sw-hint{font-size:12px;opacity:.5;white-space:nowrap}
+@media (max-width:760px){.sw-label,.sw-hint{display:none}.sw{padding:0 10px}.sw button{padding:8px 12px}.sw-tabs{justify-content:center}}
+.v{padding-top:56px;min-height:100vh;overflow-x:hidden}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ====== ОБЩИЕ КОМПОНЕНТЫ ====== */
+.ba{--p:50%;position:relative;aspect-ratio:2/1;overflow:hidden;border-radius:var(--r,16px);user-select:none;touch-action:pan-y}
+.ba .l{position:absolute;inset:0}
+.ba .l svg{width:100%;height:100%;display:block}
+.ba .before{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.4)}
+.ba .knob{position:absolute;top:50%;left:var(--p);width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-size:16px;box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:none}
+.ba .tag{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(0,0,0,.55);color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.ba .tag.a{left:12px}.ba .tag.b{right:12px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-note{font-size:13px;opacity:.65;margin:10px 0 0}
+.logo-mark{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linejoin:round}
+form.bf label{display:block;font-size:13px;margin:0 0 6px;opacity:.75}
+form.bf input,form.bf select{width:100%;padding:14px 16px;border-radius:var(--fr,12px);border:1px solid var(--fb);background:var(--fbg);outline:none;transition:.2s}
+form.bf input:focus,form.bf select:focus{border-color:var(--ac)}
+form.bf .f{margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+@media (max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+
+/* =====================================================
+   ВАРИАНТ 1 — «Люкс»: мрамор, тёмный синий, золото
+   ===================================================== */
+.v1{--bg:#0b0e14;--ink:#f4f1ea;--mut:#9aa3b2;--gold:#c9a45c;--card:#121722;--line:rgba(255,255,255,.1);--ac:var(--gold);--fb:var(--line);--fbg:rgba(255,255,255,.04);--mouth:#1a0d12;--gum:#b4616b;--r:6px;--fr:4px;
+  background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+.v1 h1,.v1 h2,.v1 h3,.v1 .serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:.01em;line-height:1.05;margin:0}
+.v1 nav{position:sticky;top:56px;z-index:50;background:rgba(11,14,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.v1 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.v1 .brand{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;text-decoration:none}
+.v1 .brand small{display:block;font:500 9px Inter;letter-spacing:.5em;color:var(--gold);margin-top:-2px}
+.v1 .brand .logo-mark{color:var(--gold);font-size:30px}
+.v1 nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--mut)}
+.v1 nav ul a{text-decoration:none;transition:.2s}.v1 nav ul a:hover{color:var(--gold)}
+.v1 .tel{color:var(--gold);text-decoration:none;font-weight:500;white-space:nowrap}
+@media (max-width:860px){.v1 nav ul{display:none}}
+.v1 .hero{position:relative;min-height:calc(100vh - 124px);display:flex;align-items:center;padding:70px 0;
+  background:radial-gradient(900px 500px at 80% 20%,rgba(201,164,92,.16),transparent 60%),radial-gradient(700px 600px at 10% 90%,rgba(40,70,140,.35),transparent 60%),
+  repeating-linear-gradient(115deg,transparent 0 120px,rgba(255,255,255,.025) 120px 121px),var(--bg);overflow:hidden}
+.v1 .lights{position:absolute;top:0;right:8%;display:flex;gap:46px;transform:skewX(-14deg)}
+.v1 .lights i{display:block;width:150px;height:6px;border-radius:4px;background:#fff;box-shadow:0 0 30px 6px rgba(255,255,255,.5),0 40px 120px 40px rgba(201,164,92,.18);animation:flick 5s infinite alternate}
+.v1 .lights i:nth-child(2){animation-delay:1.3s;margin-top:34px}
+@keyframes flick{from{opacity:.7}to{opacity:1}}
+.v1 .eyebrow{color:var(--gold);letter-spacing:.32em;text-transform:uppercase;font-size:12px;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.v1 .eyebrow::before{content:"";width:46px;height:1px;background:var(--gold)}
+.v1 .hero h1{font-size:clamp(46px,8vw,104px)}
+.v1 .hero h1 em{color:var(--gold);font-style:italic;display:block}
+.v1 .hero p{max-width:520px;color:var(--mut);font-size:18px;margin:26px 0 36px}
+.v1 .btn-gold{background:linear-gradient(135deg,#e2c283,#b88e3e);color:#16110a;box-shadow:0 10px 40px -10px rgba(201,164,92,.6)}
+.v1 .btn-ghost{border:1px solid var(--line);background:transparent;color:var(--ink)}
+.v1 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.v1 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.v1 .stats div{padding:34px 20px;text-align:center;border-right:1px solid var(--line)}
+.v1 .stats div:last-child{border:0}
+.v1 .stats b{display:block;font:500 clamp(34px,5vw,56px)/1 "Cormorant Garamond",serif;color:var(--gold)}
+.v1 .stats span{font-size:13px;color:var(--mut);letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:760px){.v1 .stats{grid-template-columns:1fr 1fr}.v1 .stats div:nth-child(2){border-right:0}.v1 .stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.v1 section{padding:100px 0}
+.v1 .head{margin-bottom:50px;max-width:640px}
+.v1 .head h2{font-size:clamp(36px,5vw,60px)}
+.v1 .head p{color:var(--mut)}
+.v1 .svc{position:relative;padding:34px 30px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s;--mx:50%;--my:50%}
+.v1 .svc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(201,164,92,.22),transparent 70%);opacity:0;transition:.3s}
+.v1 .svc:hover{transform:translateY(-6px);border-color:rgba(201,164,92,.5)}
+.v1 .svc:hover::before{opacity:1}
+.v1 .svc>*{position:relative}
+.v1 .svc .n{font:italic 500 18px "Cormorant Garamond",serif;color:var(--gold)}
+.v1 .svc h3{font-size:30px;margin:46px 0 10px}
+.v1 .svc p{color:var(--mut);font-size:15px;margin:0}
+.v1 .tech{background:linear-gradient(180deg,transparent,rgba(201,164,92,.06),transparent)}
+.v1 .tech .it{padding:30px 0;border-top:1px solid var(--line)}
+.v1 .tech h3{font-size:28px;margin-bottom:8px}
+.v1 .tech p{margin:0;color:var(--mut);font-size:15px}
+.v1 .ba{border:1px solid var(--line)}
+.v1 details{border-bottom:1px solid var(--line);padding:22px 0}
+.v1 summary{display:flex;justify-content:space-between;gap:20px;font:500 24px "Cormorant Garamond",serif}
+.v1 summary::after{content:"+";color:var(--gold);transition:.3s}
+.v1 details[open] summary::after{transform:rotate(45deg)}
+.v1 details p{color:var(--mut);margin:12px 0 0;max-width:720px}
+.v1 .book-box{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--card)}
+.v1 .book-box>div{padding:48px}
+.v1 .book-info{background:linear-gradient(160deg,rgba(201,164,92,.14),transparent)}
+.v1 .book-info h2{font-size:clamp(36px,4.5vw,54px);margin-bottom:20px}
+.v1 .book-info ul{list-style:none;padding:0;margin:26px 0 0;color:var(--mut)}
+.v1 .book-info li{padding:10px 0;border-top:1px solid var(--line)}
+.v1 .book-info li b{color:var(--ink);font-weight:500;display:block}
+@media (max-width:860px){.v1 .book-box{grid-template-columns:1fr}.v1 .book-box>div{padding:30px 22px}}
+.v1 footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.v1 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* =====================================================
+   ВАРИАНТ 2 — «Свежий»: светлый, бирюзовый, дружелюбный
+   ===================================================== */
+.v2{--bg:#f4fbfa;--ink:#0f2a2e;--mut:#4f6a6e;--ac:#0eb5a4;--ac2:#0a8f82;--soft:#d9f4f0;--card:#fff;--fb:#cfe6e3;--fbg:#fff;--mouth:#3a1a20;--gum:#e58c97;--r:22px;--fr:14px;
+  background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+.v2 h1,.v2 h2,.v2 h3{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.v2 nav{position:sticky;top:56px;z-index:50;background:rgba(244,251,250,.88);backdrop-filter:blur(10px)}
+.v2 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.v2 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+.v2 .brand .logo-mark{font-size:34px;color:#fff;background:var(--ac);padding:6px;border-radius:12px;stroke-width:2}
+.v2 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px}
+.v2 nav ul a{display:block;text-decoration:none;padding:8px 14px;border-radius:999px;transition:.2s}
+.v2 nav ul a:hover{background:var(--soft)}
+.v2 .btn-main{background:var(--ac);color:#fff;box-shadow:0 12px 28px -10px rgba(14,181,164,.7)}
+.v2 .btn-main:hover{background:var(--ac2)}
+.v2 .btn-soft{background:var(--soft);color:var(--ac2)}
+@media (max-width:860px){.v2 nav ul{display:none}}
+.v2 .hero{padding:60px 0 90px}
+.v2 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media (max-width:860px){.v2 .hero .wrap{grid-template-columns:1fr}}
+.v2 .pill{display:inline-flex;gap:8px;align-items:center;padding:7px 14px;border-radius:999px;background:var(--soft);color:var(--ac2);font-weight:700;font-size:13px;margin-bottom:22px}
+.v2 .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ac);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(14,181,164,.2)}}
+.v2 h1{font-size:clamp(40px,6vw,72px)}
+.v2 h1 span{color:var(--ac);position:relative;white-space:nowrap}
+.v2 .hero p{font-size:19px;color:var(--mut);max-width:520px;margin:22px 0 32px}
+.v2 .cta{display:flex;gap:12px;flex-wrap:wrap}
+.v2 .art{position:relative;aspect-ratio:1;max-width:480px;margin-inline:auto;width:100%}
+.v2 .blob{position:absolute;inset:6%;background:linear-gradient(145deg,#8be6da,#0eb5a4 60%,#0a8f82);border-radius:44% 56% 52% 48%/50% 42% 58% 50%;animation:morph 9s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:58% 42% 45% 55%/42% 56% 44% 58%;transform:rotate(6deg)}}
+.v2 .art .logo-mark{position:absolute;inset:22%;width:56%;height:56%;color:#fff;stroke-width:.9;filter:drop-shadow(0 20px 30px rgba(0,60,55,.35))}
+.v2 .chip{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 18px 40px -14px rgba(15,42,46,.35);font-size:14px;font-weight:700;display:flex;gap:10px;align-items:center;animation:bob 5s ease-in-out infinite}
+.v2 .chip small{display:block;font-weight:500;color:var(--mut);font-size:12px}
+.v2 .chip i{font-style:normal;font-size:22px}
+.v2 .chip.c1{top:6%;left:-4%}.v2 .chip.c2{bottom:14%;right:-4%;animation-delay:1.5s}.v2 .chip.c3{bottom:0;left:6%;animation-delay:3s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.v2 section{padding:84px 0}
+.v2 .head{text-align:center;max-width:640px;margin:0 auto 44px}
+.v2 .head h2{font-size:clamp(30px,4.2vw,46px)}
+.v2 .head p{color:var(--mut)}
+.v2 .tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.v2 .tabs button{padding:12px 22px;border-radius:999px;border:2px solid var(--fb);background:#fff;font-weight:700;cursor:pointer;transition:.2s}
+.v2 .tabs button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.v2 .panel{display:none;animation:fade .4s}.v2 .panel.on{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.v2 .card{background:var(--card);border-radius:var(--r);padding:30px;box-shadow:0 10px 30px -18px rgba(15,42,46,.3);transition:.3s}
+.v2 .card:hover{transform:translateY(-6px);box-shadow:0 24px 40px -20px rgba(14,181,164,.5)}
+.v2 .card .em{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;background:var(--soft);font-size:28px;margin-bottom:18px}
+.v2 .card h3{font-size:21px;margin-bottom:8px}
+.v2 .card p{margin:0;color:var(--mut);font-size:15px}
+.v2 .steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:860px){.v2 .steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.v2 .steps{grid-template-columns:1fr}}
+.v2 .step{counter-increment:s;position:relative;padding:28px 22px;border-radius:var(--r);background:var(--soft)}
+.v2 .step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ac);color:#fff;font-weight:800;margin-bottom:14px}
+.v2 .step h3{font-size:18px;margin-bottom:6px}.v2 .step p{margin:0;font-size:14px;color:var(--mut)}
+.v2 .ba{border:6px solid #fff;box-shadow:0 24px 50px -24px rgba(15,42,46,.45)}
+.v2 .ba-note{text-align:center}
+.v2 details{background:#fff;border-radius:18px;padding:20px 24px;margin-bottom:12px;box-shadow:0 8px 24px -18px rgba(15,42,46,.4)}
+.v2 summary{display:flex;justify-content:space-between;gap:16px;font-weight:700;font-size:17px}
+.v2 summary::after{content:"+";display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--ac2);transition:.3s}
+.v2 details[open] summary::after{transform:rotate(45deg)}
+.v2 details p{margin:12px 0 0;color:var(--mut)}
+.v2 .book{background:linear-gradient(135deg,#0eb5a4,#0a8f82);border-radius:32px;padding:clamp(28px,5vw,60px);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media (max-width:860px){.v2 .book{grid-template-columns:1fr}}
+.v2 .book h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+.v2 .book p{opacity:.9}
+.v2 .book form{background:#fff;color:var(--ink);border-radius:24px;padding:26px}
+.v2 .book .btn{width:100%;background:var(--ink);color:#fff}
+.v2 footer{padding:40px 0;text-align:center;color:var(--mut);font-size:14px}
+
+/* =====================================================
+   ВАРИАНТ 3 — «Тех-журнал»: крупная типографика, синий акцент
+   ===================================================== */
+.v3{--bg:#f2f1ec;--ink:#0b0b0f;--mut:#5b5b66;--ac:#2f4bff;--line:#0b0b0f;--fb:#0b0b0f;--fbg:#fff;--mouth:#14141c;--gum:#c46a78;--r:0px;--fr:0px;
+  background:var(--bg);color:var(--ink);font-family:Onest,system-ui,sans-serif;line-height:1.55}
+.v3 h1,.v3 h2,.v3 h3{font-family:Unbounded,sans-serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+.v3 nav{position:sticky;top:56px;z-index:50;background:var(--bg);border-bottom:2px solid var(--ink)}
+.v3 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.v3 .brand{font:800 15px Unbounded;text-decoration:none;display:flex;gap:10px;align-items:center}
+.v3 .brand .logo-mark{font-size:26px;color:var(--ac);stroke-width:2}
+.v3 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.v3 nav ul a{text-decoration:none;background:linear-gradient(var(--ac),var(--ac)) 0 100%/0 2px no-repeat;transition:background-size .3s}
+.v3 nav ul a:hover{background-size:100% 2px}
+@media (max-width:860px){.v3 nav ul{display:none}}
+.v3 .btn{border-radius:0;border:2px solid var(--ink);background:var(--ink);color:#fff;box-shadow:5px 5px 0 var(--ac)}
+.v3 .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ac)}
+.v3 .btn.alt{background:#fff;color:var(--ink)}
+.v3 .hero{padding:70px 0 0;border-bottom:2px solid var(--ink)}
+.v3 .hero h1{font-size:clamp(30px,6.6vw,92px);font-weight:800;text-transform:uppercase}
+.v3 .hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.v3 .hero h1 .b{color:var(--ac)}
+.v3 .hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin:44px 0 60px}
+.v3 .hero p{max-width:480px;font-size:19px;margin:0}
+.v3 .cta{display:flex;gap:14px;flex-wrap:wrap}
+.v3 .ticker{background:var(--ac);color:#fff;border-top:2px solid var(--ink);overflow:hidden;white-space:nowrap;font:600 15px Unbounded;padding:16px 0}
+.v3 .ticker div{display:inline-block;animation:tick 28s linear infinite}
+.v3 .ticker span{margin:0 26px}
+@keyframes tick{to{transform:translateX(-50%)}}
+.v3 section{padding:90px 0;border-bottom:2px solid var(--ink)}
+.v3 .sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:46px}
+.v3 .sec-h h2{font-size:clamp(28px,4.6vw,56px);text-transform:uppercase}
+.v3 .sec-h span{font:500 14px Onest;color:var(--mut)}
+.v3 .list details{border-top:2px solid var(--ink)}
+.v3 .list details:last-child{border-bottom:2px solid var(--ink)}
+.v3 .list summary{display:grid;grid-template-columns:70px 1fr auto;gap:16px;align-items:center;padding:24px 0;font:600 clamp(18px,2.6vw,30px) Unbounded;transition:.25s}
+.v3 .list summary i{font:500 14px Onest;font-style:normal;color:var(--ac)}
+.v3 .list summary::after{content:"→";transition:.3s;font-family:Onest}
+.v3 .list details[open] summary{color:var(--ac)}
+.v3 .list details[open] summary::after{transform:rotate(90deg)}
+.v3 .list summary:hover{padding-left:14px}
+.v3 .list details p{margin:0 0 26px 86px;max-width:620px;color:var(--mut)}
+@media (max-width:600px){.v3 .list details p{margin-left:0}.v3 .list summary{grid-template-columns:40px 1fr auto}}
+.v3 .ceph{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media (max-width:860px){.v3 .ceph{grid-template-columns:1fr}}
+.v3 .xray{background:#05060a;border:2px solid var(--ink);padding:10px;box-shadow:8px 8px 0 var(--ac)}
+.v3 .xray svg{display:block;width:100%}
+.v3 .xray .pt{cursor:pointer}
+.v3 .xray .pt circle{fill:#5eead4;transition:.2s}
+.v3 .xray .pt:hover circle,.v3 .xray .pt.on circle{fill:#fff;r:9}
+.v3 .xray .pt text{fill:#5eead4;font:600 11px Onest}
+.v3 .cap{min-height:150px;border:2px solid var(--ink);background:#fff;padding:26px}
+.v3 .cap h3{font-size:20px;margin-bottom:10px;color:var(--ac)}
+.v3 .cap p{margin:0}
+.v3 .quiz{border:2px solid var(--ink);background:#fff;padding:clamp(22px,4vw,46px);box-shadow:8px 8px 0 var(--ink)}
+.v3 .quiz h3{font-size:clamp(20px,2.6vw,30px);margin-bottom:24px}
+.v3 .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:600px){.v3 .opts{grid-template-columns:1fr}}
+.v3 .opts button{text-align:left;padding:18px;border:2px solid var(--ink);background:var(--bg);cursor:pointer;font-weight:500;transition:.2s}
+.v3 .opts button:hover{background:var(--ac);color:#fff;transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+.v3 .res b{display:block;font:800 clamp(22px,3vw,34px) Unbounded;color:var(--ac);margin:8px 0 12px}
+.v3 .res .cta{margin-top:22px}
+.v3 .ba{border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ac)}
+.v3 .ba-note{margin-top:20px}
+.v3 .faq details{border-top:2px solid var(--ink);padding:20px 0}
+.v3 .faq details:last-child{border-bottom:2px solid var(--ink)}
+.v3 .faq summary{display:flex;justify-content:space-between;gap:16px;font:600 18px Unbounded}
+.v3 .faq summary::after{content:"+";color:var(--ac);transition:.3s}
+.v3 .faq details[open] summary::after{transform:rotate(45deg)}
+.v3 .faq p{margin:12px 0 0;color:var(--mut);max-width:680px}
+.v3 .book{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+@media (max-width:860px){.v3 .book{grid-template-columns:1fr}}
+.v3 .book h2{font-size:clamp(30px,5vw,64px);text-transform:uppercase}
+.v3 .book .big{font:800 clamp(24px,3.6vw,40px) Unbounded;margin:26px 0 8px;display:block;text-decoration:none;color:var(--ac)}
+.v3 form.book-f{background:#fff;border:2px solid var(--ink);padding:30px;box-shadow:8px 8px 0 var(--ink)}
+.v3 form .btn{width:100%}
+.v3 footer{padding:30px 0;font-size:14px;color:var(--mut)}
+.v3 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tooth" viewBox="0 0 24 24"><path d="M7 3C4.500 3 3 5 3 7.500c0 2 .8 3.300 1.300 5.200.6 2.300.7 8.300 2.700 8.300 1.600 0 1.400-4.500 3-4.500h4c1.600 0 1.400 4.500 3 4.500 2 0 2.100-6 2.700-8.300.5-1.900 1.300-3.200 1.300-5.200C21 5 19.500 3 17 3c-1.800 0-2.700 1-5 1S8.800 3 7 3z"/></symbol>
+</svg>
+
+<!-- ============ ПЕРЕКЛЮЧАТЕЛЬ ДИЗАЙНОВ ============ -->
+<header class="sw" role="tablist" aria-label="Выбор дизайна">
+  <span class="sw-label">Выбор дизайна</span>
+  <div class="sw-tabs">
+    <button role="tab" data-v="v1" aria-selected="true"><b>1</b>Люкс</button>
+    <button role="tab" data-v="v2" aria-selected="false"><b>2</b>Свежий</button>
+    <button role="tab" data-v="v3" aria-selected="false"><b>3</b>Тех-журнал</button>
+  </div>
+  <span class="sw-hint">клавиши 1 · 2 · 3</span>
+</header>
+
+<!-- ============ ВАРИАНТ 1 — ЛЮКС ============ -->
+<main class="v v1" id="v1">
+  <nav><div class="wrap">
+    <a class="brand" href="#v1"><svg class="logo-mark"><use href="#tooth"/></svg><span>Dr.Batraliev<small>CLINIC</small></span></a>
+    <ul><li><a href="#v1-svc">Услуги</a></li><li><a href="#v1-ba">Результаты</a></li><li><a href="#v1-tech">Технологии</a></li><li><a href="#v1-faq">Вопросы</a></li></ul>
+    <a class="tel" href="tel:+996555609609">0555 609 609</a>
+  </div></nav>
+
+  <div class="hero">
+    <div class="lights" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap">
+      <div class="eyebrow rv">Ортодонтия · Бишкек</div>
+      <h1 class="rv">Эстетика.<em>Технологии.</em>Совершенство.</h1>
+      <p class="rv">Брекеты, элайнеры и эстетическая стоматология в клинике, где каждая деталь — от диагностики до интерьера — продумана ради вашей улыбки.</p>
+      <div class="rv" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn btn-gold" href="#v1-book">Записаться на консультацию</a>
+        <a class="btn btn-ghost" href="#v1-ba">Смотреть результаты</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats wrap rv">
+    <div><b data-count="55" data-suf=" тыс.">0</b><span>подписчиков в Instagram</span></div>
+    <div><b data-count="271">0</b><span>публикаций с результатами</span></div>
+    <div><b>1:1</b><span>индивидуальный план</span></div>
+    <div><b>3D</b><span>цифровая диагностика</span></div>
+  </div>
+
+  <section id="v1-svc"><div class="wrap">
+    <div class="head rv"><div class="eyebrow">Услуги</div><h2>Всё для безупречной улыбки</h2><p>Наведите курсор на карточку — подсветка следует за вами.</p></div>
+    <div class="grid g3">
+      <article class="svc rv"><span class="n">01</span><h3>Брекеты</h3><p>Металлические, керамические и сапфировые системы. Подбираем под ваш прикус и образ жизни.</p></article>
+      <article class="svc rv"><span class="n">02</span><h3>Элайнеры</h3><p>Прозрачные капы — почти незаметное выравнивание зубов без лишних ограничений.</p></article>
+      <article class="svc rv"><span class="n">03</span><h3>Детская ортодонтия</h3><p>Корректируем прикус вовремя, бережно и без стресса для ребёнка.</p></article>
+      <article class="svc rv"><span class="n">04</span><h3>Диагностика</h3><p>Телерентген, КТ и фотопротокол — точный план лечения ещё до начала.</p></article>
+      <article class="svc rv"><span class="n">05</span><h3>Эстетика</h3><p>Виниры и реставрации: форма, цвет и симметрия, которые выглядят естественно.</p></article>
+      <article class="svc rv"><span class="n">06</span><h3>Ретенция</h3><p>Ретейнеры и контроль — чтобы результат остался с вами надолго.</p></article>
+    </div>
+  </div></section>
+
+  <section id="v1-ba"><div class="wrap">
+    <div class="head rv"><div class="eyebrow">Результаты</div><h2>До и после</h2></div>
+    <div class="ba rv" data-ba></div>
+    <p class="ba-note">Потяните ползунок. Иллюстрация — реальные фото из Instagram клиники можно подставить сюда.</p>
+  </div></section>
+
+  <section class="tech" id="v1-tech"><div class="wrap grid g2" style="gap:60px;align-items:start">
+    <div class="head rv" style="margin:0"><div class="eyebrow">Технологии</div><h2>Точность, которую можно измерить</h2><p>Лечение строится на данных, а не на предположениях.</p></div>
+    <div>
+      <div class="it rv"><h3>Цефалометрия</h3><p>Анализ телерентгенограммы — основа для расчёта движения зубов и роста челюстей.</p></div>
+      <div class="it rv"><h3>Цифровое планирование</h3><p>Вы заранее видите, как будет меняться улыбка на каждом этапе.</p></div>
+      <div class="it rv"><h3>Фотопротокол</h3><p>Фиксируем динамику, чтобы результат был подтверждён, а не обещан.</p></div>
+    </div>
+  </div></section>
+
+  <section id="v1-faq"><div class="wrap" style="max-width:900px">
+    <div class="head rv"><div class="eyebrow">Вопросы</div><h2>Частые вопросы</h2></div>
+    <details><summary>Больно ли носить брекеты?</summary><p>В первые дни после установки и активации возможен дискомфорт. Он проходит, а врач подскажет, как его смягчить.</p></details>
+    <details><summary>Сколько длится лечение?</summary><p>Срок зависит от сложности случая — обычно от нескольких месяцев до двух лет. Точный план называем после диагностики.</p></details>
+    <details><summary>С какого возраста можно начинать?</summary><p>Консультацию стоит пройти уже в детском возрасте: иногда вовремя начатая коррекция упрощает дальнейшее лечение.</p></details>
+    <details><summary>Нужна ли предварительная запись?</summary><p>Да, мы работаем по записи — так врач уделит вам всё необходимое время. Напишите в WhatsApp или позвоните.</p></details>
+  </div></section>
+
+  <section id="v1-book" style="padding-top:20px"><div class="wrap">
+    <div class="book-box rv">
+      <div class="book-info">
+        <h2>Запишитесь на консультацию</h2>
+        <p style="color:var(--mut)">Оставьте контакты — мы продолжим диалог в WhatsApp.</p>
+        <ul>
+          <li><b>Адрес</b>117 ул. Медерова, Бишкек, Кыргызстан</li>
+          <li><b>Телефон / WhatsApp</b><a href="tel:+996555609609">0555 609 609</a></li>
+          <li><b>Instagram</b><a href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">@dr.batraliev</a></li>
+        </ul>
+      </div>
+      <div><form class="bf" data-wa>
+        <div class="f"><label>Ваше имя</label><input name="name" required autocomplete="name"></div>
+        <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
+        <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Детская ортодонтия</option><option>Эстетика зубов</option><option>Пока не знаю — нужна консультация</option></select></div>
+        <button class="btn btn-gold" style="width:100%">Отправить в WhatsApp</button>
+      </form></div>
+    </div>
+  </div></section>
+  <footer><div class="wrap"><span>© Dr.Batraliev Clinic</span><span>Концепт дизайна · вариант 1</span></div></footer>
+</main>
+
+<!-- ============ ВАРИАНТ 2 — СВЕЖИЙ ============ -->
+<main class="v v2" id="v2" hidden>
+  <nav><div class="wrap">
+    <a class="brand" href="#v2"><svg class="logo-mark"><use href="#tooth"/></svg>Dr.Batraliev Clinic</a>
+    <ul><li><a href="#v2-svc">Услуги</a></li><li><a href="#v2-steps">Как проходит</a></li><li><a href="#v2-ba">Результаты</a></li><li><a href="#v2-faq">Вопросы</a></li></ul>
+    <a class="btn btn-main" style="padding:11px 20px" href="#v2-book">Записаться</a>
+  </div></nav>
+
+  <div class="hero"><div class="wrap">
+    <div>
+      <span class="pill rv">Принимаем по записи · Бишкек</span>
+      <h1 class="rv">Улыбка, которой вы будете <span>рады</span> каждый день</h1>
+      <p class="rv">Брекеты, элайнеры и забота о зубах для детей и взрослых — спокойно, понятно и без страха перед стоматологом.</p>
+      <div class="cta rv"><a class="btn btn-main" href="#v2-book">Записаться на консультацию</a><a class="btn btn-soft" href="https://wa.me/996555609609" target="_blank" rel="noopener">Написать в WhatsApp</a></div>
+    </div>
+    <div class="art rv" aria-hidden="true">
+      <div class="blob"></div><svg class="logo-mark"><use href="#tooth"/></svg>
+      <div class="chip c1"><i>🦷</i><div>Брекеты и элайнеры<small>для любого возраста</small></div></div>
+      <div class="chip c2"><i>⭐</i><div>55 тыс.<small>нас читают в Instagram</small></div></div>
+      <div class="chip c3"><i>💬</i><div>Ответим в WhatsApp<small>0555 609 609</small></div></div>
+    </div>
+  </div></div>
+
+  <section id="v2-svc" style="background:#fff"><div class="wrap">
+    <div class="head rv"><h2>Выберите, для кого лечение</h2><p>Переключайте вкладки — покажем, что подойдёт именно вам.</p></div>
+    <div class="tabs" role="tablist" data-tabs>
+      <button role="tab" aria-selected="true" data-t="kids">👧 Детям</button>
+      <button role="tab" aria-selected="false" data-t="teens">🧑‍🎓 Подросткам</button>
+      <button role="tab" aria-selected="false" data-t="adults">🧑‍💼 Взрослым</button>
+    </div>
+    <div class="grid g3 panel on" data-p="kids">
+      <div class="card"><div class="em">🧸</div><h3>Ранняя диагностика</h3><p>Смотрим, как растут челюсти, и вовремя направляем рост.</p></div>
+      <div class="card"><div class="em">😁</div><h3>Исправление прикуса</h3><p>Мягкие аппараты и пластинки — без стресса для малыша.</p></div>
+      <div class="card"><div class="em">🎁</div><h3>Дружелюбный приём</h3><p>Объясняем всё на понятном языке и не торопим.</p></div>
+    </div>
+    <div class="grid g3 panel" data-p="teens">
+      <div class="card"><div class="em">✨</div><h3>Брекеты</h3><p>Яркие лигатуры, керамика или сапфир — выбираете стиль.</p></div>
+      <div class="card"><div class="em">🫧</div><h3>Элайнеры</h3><p>Прозрачные капы, которые снимаются для еды и фото.</p></div>
+      <div class="card"><div class="em">📅</div><h3>Удобный график</h3><p>Визиты подстраиваем под школу и кружки.</p></div>
+    </div>
+    <div class="grid g3 panel" data-p="adults">
+      <div class="card"><div class="em">🔍</div><h3>Диагностика</h3><p>Телерентген, фото и план лечения с понятными этапами.</p></div>
+      <div class="card"><div class="em">🧩</div><h3>Незаметное выравнивание</h3><p>Элайнеры и эстетические брекеты для работы и жизни.</p></div>
+      <div class="card"><div class="em">💎</div><h3>Эстетика</h3><p>Виниры и реставрации для естественной красивой улыбки.</p></div>
+    </div>
+  </div></section>
+
+  <section id="v2-steps"><div class="wrap">
+    <div class="head rv"><h2>Как проходит лечение</h2><p>Четыре простых шага — и вы видите результат.</p></div>
+    <div class="steps">
+      <div class="step rv"><h3>Знакомство</h3><p>Осмотр и разговор о ваших целях.</p></div>
+      <div class="step rv"><h3>Диагностика</h3><p>Снимки, фото и анализ прикуса.</p></div>
+      <div class="step rv"><h3>План</h3><p>Показываем этапы и ожидаемый результат.</p></div>
+      <div class="step rv"><h3>Улыбка</h3><p>Лечение, контроль и закрепление.</p></div>
+    </div>
+  </div></section>
+
+  <section id="v2-ba" style="background:#fff"><div class="wrap" style="max-width:900px">
+    <div class="head rv"><h2>Посмотрите на разницу</h2></div>
+    <div class="ba rv" data-ba></div>
+    <p class="ba-note">Двигайте ползунок. Сюда можно поставить реальные фото пациентов (с их согласия).</p>
+  </div></section>
+
+  <section id="v2-faq"><div class="wrap" style="max-width:820px">
+    <div class="head rv"><h2>Вы спрашиваете — мы отвечаем</h2></div>
+    <details><summary>Больно ли носить брекеты?</summary><p>Первые дни возможна небольшая чувствительность — это нормально и быстро проходит.</p></details>
+    <details><summary>Сколько длится лечение?</summary><p>От нескольких месяцев до двух лет — зависит от случая. Точный срок назовём после диагностики.</p></details>
+    <details><summary>С какого возраста можно прийти?</summary><p>Консультация полезна и детям: иногда вовремя начатая коррекция упрощает всё дальнейшее лечение.</p></details>
+    <details><summary>Нужна ли запись?</summary><p>Да, приём идёт по записи. Напишите нам в WhatsApp или позвоните.</p></details>
+  </div></section>
+
+  <section id="v2-book" style="padding-top:20px"><div class="wrap">
+    <div class="book rv">
+      <div>
+        <h2>Сделаем первый шаг к красивой улыбке?</h2>
+        <p>Оставьте контакты — ответим в WhatsApp и подберём удобное время.</p>
+        <p>📍 117 ул. Медерова, Бишкек<br>📞 <a href="tel:+996555609609">0555 609 609</a><br>📷 <a href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">@dr.batraliev</a></p>
+      </div>
+      <form class="bf" data-wa>
+        <div class="f"><label>Как вас зовут?</label><input name="name" required autocomplete="name"></div>
+        <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
+        <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Детская ортодонтия</option><option>Эстетика зубов</option><option>Нужна консультация</option></select></div>
+        <button class="btn">Записаться через WhatsApp</button>
+      </form>
+    </div>
+  </div></section>
+  <footer>© Dr.Batraliev Clinic · Концепт дизайна · вариант 2</footer>
+</main>
+
+<!-- ============ ВАРИАНТ 3 — ТЕХ-ЖУРНАЛ ============ -->
+<main class="v v3" id="v3" hidden>
+  <nav><div class="wrap">
+    <a class="brand" href="#v3"><svg class="logo-mark"><use href="#tooth"/></svg>DR.BATRALIEV</a>
+    <ul><li><a href="#v3-svc">Услуги</a></li><li><a href="#v3-tech">Технологии</a></li><li><a href="#v3-quiz">Подбор</a></li><li><a href="#v3-faq">FAQ</a></li></ul>
+    <a class="btn" style="padding:10px 18px;font-size:14px;box-shadow:3px 3px 0 var(--ac)" href="#v3-book">Запись</a>
+  </div></nav>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1 class="rv">Ортодонтия <span class="o">без</span> <span class="b">компромиссов</span></h1>
+      <div class="row">
+        <p class="rv">Dr.Batraliev Clinic — эстетика, технологии и совершенство в каждой детали. Брекеты и элайнеры в Бишкеке.</p>
+        <div class="cta rv"><a class="btn" href="#v3-quiz">Подобрать лечение →</a><a class="btn alt" href="#v3-book">Записаться</a></div>
+      </div>
+    </div>
+    <div class="ticker" aria-hidden="true"><div>
+      <span>БРЕКЕТЫ</span><span>✦</span><span>ЭЛАЙНЕРЫ</span><span>✦</span><span>ДЕТСКАЯ ОРТОДОНТИЯ</span><span>✦</span><span>ЦЕФАЛОМЕТРИЯ</span><span>✦</span><span>ЭСТЕТИКА</span><span>✦</span>
+      <span>БРЕКЕТЫ</span><span>✦</span><span>ЭЛАЙНЕРЫ</span><span>✦</span><span>ДЕТСКАЯ ОРТОДОНТИЯ</span><span>✦</span><span>ЦЕФАЛОМЕТРИЯ</span><span>✦</span><span>ЭСТЕТИКА</span><span>✦</span>
+    </div></div>
+  </div>
+
+  <section id="v3-svc"><div class="wrap">
+    <div class="sec-h rv"><h2>Услуги</h2><span>Нажмите на строку, чтобы раскрыть</span></div>
+    <div class="list rv">
+      <details open><summary><i>01</i>Брекеты</summary><p>Металлические, керамические, сапфировые. Подбираем систему под прикус, бюджет и образ жизни.</p></details>
+      <details><summary><i>02</i>Элайнеры</summary><p>Прозрачные капы с цифровым планом движения зубов. Вы видите итог заранее.</p></details>
+      <details><summary><i>03</i>Детская ортодонтия</summary><p>Ранняя коррекция прикуса и направление роста челюстей — мягко и своевременно.</p></details>
+      <details><summary><i>04</i>Диагностика</summary><p>Телерентген, КТ, фотопротокол. Лечение начинается с точных данных.</p></details>
+      <details><summary><i>05</i>Эстетика</summary><p>Виниры и реставрации: естественная форма, цвет и симметрия.</p></details>
+    </div>
+  </div></section>
+
+  <section id="v3-tech"><div class="wrap">
+    <div class="sec-h rv"><h2>Точки роста</h2><span>Наведите на точки снимка</span></div>
+    <div class="ceph">
+      <div class="xray rv">
+        <svg viewBox="0 0 400 300" role="img" aria-label="Схема телерентгенограммы с интерактивными точками">
+          <defs><radialGradient id="rg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#1b2a3a"/><stop offset="1" stop-color="#05060a"/></radialGradient></defs>
+          <rect width="400" height="300" fill="url(#rg)"/>
+          <g fill="none" stroke="#9fb4c9" stroke-opacity=".75" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M70 120c0-60 60-95 120-90 55 4 95 38 100 80 3 24-8 40-22 52"/>
+            <path d="M120 150c-8 34 4 58 30 70 20 9 44 8 62-4"/>
+            <path d="M232 168c14-6 36-4 50 6 10 8 8 24-6 30-14 5-34 2-46-6"/>
+            <path d="M286 114c18 6 52 18 58 46 4 18-10 28-26 24"/>
+            <path d="M150 232c6 30 20 50 38 60"/>
+          </g>
+          <g fill="none" stroke="#5eead4" stroke-opacity=".35" stroke-dasharray="4 5"><path d="M120 120L290 112L276 196L150 232"/></g>
+          <g class="pts">
+            <g class="pt on" data-t="N — Nasion|Опорная точка основания черепа. От неё строятся линии для оценки положения челюстей." transform="translate(290 112)"><circle r="6"/><text x="12" y="4">N</text></g>
+            <g class="pt" data-t="S — Sella|Центр турецкого седла. Вместе с N задаёт базовую плоскость анализа." transform="translate(120 120)"><circle r="6"/><text x="-14" y="-10">S</text></g>
+            <g class="pt" data-t="A — подносовая точка|Показывает положение верхней челюсти относительно основания черепа." transform="translate(276 196)"><circle r="6"/><text x="12" y="4">A</text></g>
+            <g class="pt" data-t="B — подбородочная|Показывает положение нижней челюсти. Разница A–B помогает определить тип прикуса." transform="translate(150 232)"><circle r="6"/><text x="-16" y="16">B</text></g>
+            <g class="pt" data-t="Go — угол челюсти|Определяет наклон нижней челюсти и направление её роста." transform="translate(110 188)"><circle r="6"/><text x="-26" y="4">Go</text></g>
+          </g>
+        </svg>
+      </div>
+      <div class="cap rv" id="cap"><h3>N — Nasion</h3><p>Опорная точка основания черепа. От неё строятся линии для оценки положения челюстей.</p></div>
+    </div>
+  </div></section>
+
+  <section id="v3-quiz"><div class="wrap" style="max-width:900px">
+    <div class="sec-h rv"><h2>Подбор лечения</h2><span>1 вопрос · 10 секунд</span></div>
+    <div class="quiz rv" data-quiz>
+      <div class="q">
+        <h3>Что вас беспокоит больше всего?</h3>
+        <div class="opts">
+          <button data-r="Брекеты|Исправят скученность и неровные зубы, подойдут при сложных случаях и любом возрасте.">Зубы растут неровно</button>
+          <button data-r="Элайнеры|Прозрачные капы почти незаметны — удобны, если важна эстетика на работе и в жизни.">Хочу незаметное лечение</button>
+          <button data-r="Коррекция прикуса|Нужна диагностика: телерентген и осмотр покажут, какая система или аппарат подойдёт.">Проблемы с прикусом</button>
+          <button data-r="Детская ортодонтия|Ранняя консультация поможет вовремя направить рост челюстей и избежать сложностей.">Подбираю лечение ребёнку</button>
+        </div>
+      </div>
+      <div class="res" hidden>
+        <span style="font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em">Вам может подойти</span>
+        <b></b><p></p>
+        <div class="cta"><a class="btn" href="#v3-book" data-pick>Записаться на консультацию</a><button class="btn alt" data-again>Пройти заново</button></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="v3-ba"><div class="wrap">
+    <div class="sec-h rv"><h2>До / После</h2><span>Потяните ползунок</span></div>
+    <div class="ba rv" data-ba></div>
+    <p class="ba-note">Иллюстрация. Здесь будут реальные кейсы клиники из Instagram.</p>
+  </div></section>
+
+  <section id="v3-faq" class="faq"><div class="wrap" style="max-width:900px">
+    <div class="sec-h rv"><h2>FAQ</h2></div>
+    <details><summary>Больно ли носить брекеты?</summary><p>В первые дни возможен дискомфорт — он проходит. Врач подскажет, как его смягчить.</p></details>
+    <details><summary>Сколько длится лечение?</summary><p>От нескольких месяцев до двух лет. Точный срок — после диагностики.</p></details>
+    <details><summary>С какого возраста начинать?</summary><p>Консультацию стоит пройти уже в детском возрасте.</p></details>
+    <details><summary>Нужна ли запись?</summary><p>Да, приём по записи — напишите в WhatsApp или позвоните.</p></details>
+  </div></section>
+
+  <section id="v3-book" style="border-bottom:0"><div class="wrap book">
+    <div class="rv">
+      <h2>Начнём<br>с консультации</h2>
+      <a class="big" href="tel:+996555609609">0555 609 609</a>
+      <p>117 ул. Медерова, Бишкек<br><a href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">instagram.com/dr.batraliev</a></p>
+    </div>
+    <form class="bf book-f rv" data-wa>
+      <div class="f"><label>Имя</label><input name="name" required autocomplete="name"></div>
+      <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
+      <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Коррекция прикуса</option><option>Детская ортодонтия</option><option>Эстетика зубов</option></select></div>
+      <button class="btn">Отправить в WhatsApp →</button>
+    </form>
+  </div></section>
+  <footer><div class="wrap"><span>© Dr.Batraliev Clinic</span><span>Концепт дизайна · вариант 3</span></div></footer>
+</main>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* --- переключатель дизайнов --- */
+  var tabs=$$('.sw button'),views=$$('.v');
+  function show(id,noScroll){
+    if(!document.getElementById(id))id='v1';
+    views.forEach(function(v){v.hidden=v.id!==id});
+    tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.v===id)});
+    document.body.style.background=getComputedStyle(document.getElementById(id)).backgroundColor;
+    store.set('design',id);
+    try{history.replaceState(null,'','#'+id)}catch(e){}
+    if(!noScroll)window.scrollTo({top:0,behavior:'auto'});
+    observe();
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.v)})});
+  document.addEventListener('keydown',function(e){
+    if(/input|select|textarea/i.test(e.target.tagName)||e.ctrlKey||e.metaKey||e.altKey)return;
+    if('123'.indexOf(e.key)>-1&&e.key)show('v'+e.key);
+  });
+
+  /* --- зубы (SVG для «до/после») --- */
+  function teeth(bad){
+    var W=[34,38,46,50,50,46,38,34],rot=[-13,9,-17,14,-9,19,-11,13],dy=[7,-5,11,-9,6,-11,8,-4],dx=[-5,6,-9,7,-4,9,-6,4];
+    var tot=W.reduce(function(a,b){return a+b},0),x=200-tot/2,s='';
+    s+='<svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="var(--mouth)"/>';
+    s+='<path d="M0 0H400V62C340 84 260 90 200 90S60 84 0 62Z" fill="var(--gum)"/><path d="M0 200V150C60 170 140 176 200 176S340 170 400 150V200Z" fill="var(--gum)"/>';
+    W.forEach(function(w,i){
+      var h=i>1&&i<6?66:58,cx=x+w/2+(bad?dx[i]:0),arc=Math.pow((i-3.5)/3.5,2)*12,cy=66+h/2+arc+(bad?dy[i]:0),r=bad?rot[i]:0;
+      var fill=bad?(i%2?'#eadcae':'#efe4c0'):'#fbfbf7';
+      s+='<rect x="'+(-w/2)+'" y="'+(-h/2)+'" width="'+w+'" height="'+h+'" rx="'+(w*.38)+'" fill="'+fill+'" stroke="rgba(0,0,0,.18)" transform="translate('+cx+' '+cy+') rotate('+r+')"/>';
+      x+=w-(bad?2:0);
+    });
+    var L=[26,28,30,30,30,30,28,26],lt=L.reduce(function(a,b){return a+b},0),lx=200-lt/2;
+    var lr=[10,-12,8,-6,11,-9,13,-8],ly=[-4,5,-7,6,-3,8,-6,4];
+    L.forEach(function(w,i){
+      var h=44,cx=lx+w/2,arc=Math.pow((i-3.5)/3.5,2)*10,cy=176-h/2-arc+(bad?ly[i]:0);
+      s+='<rect x="'+(-w/2)+'" y="'+(-h/2)+'" width="'+w+'" height="'+h+'" rx="'+(w*.36)+'" fill="'+(bad?'#e6d8a8':'#f6f6f1')+'" stroke="rgba(0,0,0,.18)" transform="translate('+cx+' '+cy+') rotate('+(bad?lr[i]:0)+')"/>';
+      lx+=w;
+    });
+    return s+'</svg>';
+  }
+  $$('[data-ba]').forEach(function(el){
+    el.innerHTML='<div class="l after">'+teeth(false)+'</div><div class="l before">'+teeth(true)+'</div><span class="tag a">До</span><span class="tag b">После</span><div class="line"></div><div class="knob">⇆</div><input type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">';
+    var inp=$('input',el);
+    function set(){el.style.setProperty('--p',inp.value+'%')}
+    inp.addEventListener('input',set);set();
+  });
+
+  /* --- подсветка карточек (вариант 1) --- */
+  $$('.v1 .svc').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')})});
+
+  /* --- вкладки (вариант 2) --- */
+  $$('[data-tabs]').forEach(function(box){
+    $$('button',box).forEach(function(b){b.addEventListener('click',function(){
+      $$('button',box).forEach(function(x){x.setAttribute('aria-selected',x===b)});
+      $$('.panel',box.parentNode).forEach(function(p){p.classList.toggle('on',p.dataset.p===b.dataset.t)});
+    })});
+  });
+
+  /* --- подпись к точкам снимка (вариант 3) --- */
+  var cap=$('#cap');
+  $$('.pt').forEach(function(p){
+    function pick(){
+      $$('.pt').forEach(function(x){x.classList.toggle('on',x===p)});
+      var t=p.dataset.t.split('|');cap.innerHTML='<h3></h3><p></p>';$('h3',cap).textContent=t[0];$('p',cap).textContent=t[1];
+    }
+    p.addEventListener('mouseenter',pick);p.addEventListener('click',pick);
+  });
+
+  /* --- квиз (вариант 3) --- */
+  $$('[data-quiz]').forEach(function(q){
+    var qs=$('.q',q),res=$('.res',q),sel=null;
+    $$('.opts button',q).forEach(function(b){b.addEventListener('click',function(){
+      var r=b.dataset.r.split('|');sel=r[0];
+      $('b',res).textContent=r[0];$('p',res).textContent=r[1];
+      qs.hidden=true;res.hidden=false;
+    })});
+    $('[data-again]',q).addEventListener('click',function(){res.hidden=true;qs.hidden=false});
+    $('[data-pick]',q).addEventListener('click',function(){
+      var s=$('#v3 select[name=service]');if(!s||!sel)return;
+      $$('option',s).forEach(function(o){if(o.textContent===sel)s.value=o.value});
+    });
+  });
+
+  /* --- запись через WhatsApp --- */
+  $$('form[data-wa]').forEach(function(f){f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f),t='Здравствуйте! Меня зовут '+d.get('name')+'. Хочу записаться на консультацию: '+d.get('service')+'. Мой телефон: '+d.get('phone')+'.';
+    window.open('https://wa.me/996555609609?text='+encodeURIComponent(t),'_blank','noopener');
+  })});
+
+  /* --- появление при скролле + счётчики --- */
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(en){
+    if(!en.isIntersecting)return;en.target.classList.add('in');io.unobserve(en.target);
+    $$('[data-count]',en.target).forEach(count);
+  })},{threshold:.12}):null;
+  function count(el){
+    if(el.dataset.done)return;el.dataset.done=1;
+    var to=+el.dataset.count,suf=el.dataset.suf||'',t0=performance.now();
+    (function tick(t){var k=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(tick)})(t0);
+  }
+  function observe(){
+    $$('.rv:not(.in)').forEach(function(el){if(io)io.observe(el);else{el.classList.add('in');$$('[data-count]',el).forEach(count)}});
+  }
+
+  /* --- старт: из адреса или из памяти --- */
+  var start=location.hash.slice(1);
+  if(!/^v[123]$/.test(start))start=store.get('design')||'v1';
+  show(/^v[123]$/.test(start)?start:'v1',true);
+})();
+</script>
+</body>
+</html>

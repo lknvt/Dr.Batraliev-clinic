@@ -201,107 +201,91 @@ form.bf .f{margin-bottom:14px}
 .v2 footer{padding:40px 0;text-align:center;color:var(--mut);font-size:14px}
 
 /* =====================================================
-   ВАРИАНТ 3 — «Сторис»: сайт в формате Instagram-профиля
+   ВАРИАНТ 3 — «Кино»: сторителлинг на скролле, чёрное и белое
    ===================================================== */
-.v3{--bg:#fafafa;--ink:#141414;--mut:#737373;--ac:#4f5bff;--line:#dbdbdb;--card:#fff;--fb:#dbdbdb;--fbg:#fff;--mouth:#2a1218;--gum:#d9798a;--r:12px;--fr:10px;
-  background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5;padding-bottom:40px}
-.v3 .ig{width:min(935px,100% - 24px);margin:0 auto}
-.v3 .prof{display:grid;grid-template-columns:240px 1fr;gap:20px;padding:40px 0 22px;align-items:start}
-.v3 .ava{width:150px;height:150px;border-radius:50%;padding:4px;margin:0 auto;background:conic-gradient(from 200deg,#4f5bff,#c13584,#fd8d32,#4f5bff)}
-.v3 .ava div{width:100%;height:100%;border-radius:50%;border:4px solid var(--bg);background:radial-gradient(circle at 30% 20%,#27324d,#0b0e14);display:grid;place-items:center;color:#e2c283}
-.v3 .ava .logo-mark{font-size:66px;stroke-width:1.2}
-.v3 .l1{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.v3 .l1 h1{font:400 21px Inter;margin:0 8px 0 0;display:flex;align-items:center;gap:6px}
-.v3 .l1 h1 i{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--ac);color:#fff;font-size:10px;font-style:normal}
-.v3 .b{padding:8px 16px;border-radius:8px;border:0;background:#efefef;color:var(--ink);font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;transition:.15s;display:inline-block}
-.v3 .b:hover{background:#dbdbdb}
-.v3 .b.pr{background:var(--ac);color:#fff}.v3 .b.pr:hover{background:#3d49e6}
-.v3 .stats{display:flex;gap:40px;list-style:none;padding:0;margin:0 0 16px;font-size:16px}
-.v3 .stats b{font-weight:600}
-.v3 .bio{font-size:14.5px}
-.v3 .bio strong{display:block;font-weight:600}
-.v3 .bio a{color:#00376b;font-weight:500;text-decoration:none;display:block}
-.v3 .bio a:hover{text-decoration:underline}
-@media (max-width:700px){.v3 .prof{grid-template-columns:96px 1fr;padding-top:22px}.v3 .ava{width:86px;height:86px}.v3 .ava .logo-mark{font-size:40px}.v3 .stats{gap:14px;font-size:13px;flex-wrap:wrap}.v3 .l1 h1{font-size:18px;width:100%}}
-.v3 .hls{display:flex;gap:26px;overflow-x:auto;padding:14px 4px 22px;scrollbar-width:none}
-.v3 .hls::-webkit-scrollbar{display:none}
-.v3 .hl{flex:none;border:0;background:none;cursor:pointer;display:grid;gap:8px;justify-items:center;font-size:13px;font-weight:500;width:84px}
-.v3 .hl span{width:80px;height:80px;border-radius:50%;padding:3px;border:2px solid var(--line);transition:.25s}
-.v3 .hl span i{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;font-style:normal;font-size:30px;background:var(--hb)}
-.v3 .hl:hover span{border-color:var(--ac);transform:scale(1.06)}
-.v3 .tabs{display:flex;justify-content:center;gap:clamp(24px,8vw,64px);border-top:1px solid var(--line)}
-.v3 .tabs button{border:0;background:none;padding:16px 4px;margin-top:-1px;border-top:1px solid transparent;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--mut);cursor:pointer}
-.v3 .tabs button[aria-selected=true]{color:var(--ink);border-top-color:var(--ink)}
-.v3 .pn{display:none;animation:fd .35s}.v3 .pn.on{display:block}
-@keyframes fd{from{opacity:0;transform:translateY(8px)}}
-.v3 .gr{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-@media (max-width:600px){.v3 .gr{gap:2px}}
-.v3 .tl{position:relative;aspect-ratio:1;border:0;padding:clamp(10px,2.4vw,24px);cursor:pointer;overflow:hidden;background:var(--tb);color:var(--tf);text-align:left;display:flex;flex-direction:column;justify-content:space-between;font-family:inherit}
-.v3 .tl .logo-mark{font-size:clamp(22px,4vw,40px);opacity:.9;stroke-width:1.4}
-.v3 .tl b{font:800 clamp(12px,2.6vw,26px)/1.1 Manrope,Inter,sans-serif;letter-spacing:-.01em;text-transform:uppercase}
-.v3 .tl small{display:block;font-weight:500;font-size:clamp(9px,1.5vw,13px);opacity:.8;text-transform:none;margin-top:4px}
-.v3 .tl::after{content:"♥  " attr(data-n);position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.45);color:#fff;font-weight:700;opacity:0;transition:.2s}
-.v3 .tl:hover::after,.v3 .tl:focus-visible::after{opacity:1}
-.v3 .card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;max-width:560px;margin:26px auto 0}
-.v3 .ph{display:flex;align-items:center;gap:10px;padding:12px 14px;font-weight:600;font-size:14px}
-.v3 .ph .mini{width:34px;height:34px;border-radius:50%;background:#0b0e14;color:#e2c283;display:grid;place-items:center;flex:none}
-.v3 .ph .mini .logo-mark{font-size:20px}
-.v3 .ph small{display:block;font-weight:400;color:var(--mut);font-size:12px}
-.v3 .acts{display:flex;gap:14px;padding:10px 14px 4px;font-size:24px}
-.v3 .acts button{border:0;background:none;cursor:pointer;font-size:24px;padding:0;line-height:1;transition:transform .15s}
-.v3 .acts button:active{transform:scale(1.3)}
-.v3 .cap{padding:4px 14px 16px;font-size:14.5px}
-.v3 .cap b{font-weight:600}
-.v3 .cap .tags{color:#00376b;display:block;margin-top:4px}
-.v3 .card .ba{border-radius:0}
-.v3 .card form{padding:6px 18px 22px}
-.v3 .card form .b.pr{width:100%;padding:13px;font-size:15px;margin-top:4px}
-.v3 .card .ct{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 18px 18px}
-.v3 .card .ct a{text-align:center}
-.v3 footer{text-align:center;padding:36px 12px 10px;font-size:13px;color:var(--mut)}
-/* сторис и пост — поверх всего */
-.v3-ov{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);display:grid;place-items:center;font-family:Inter,system-ui,sans-serif;animation:fd .25s}
-.v3-ov[hidden]{display:none}
-.v3-x{position:absolute;top:14px;right:18px;border:0;background:none;color:#fff;font-size:34px;cursor:pointer;z-index:5;line-height:1}
-.st{position:relative;width:min(420px,100vw);height:min(88vh,780px);border-radius:16px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:70px 32px 40px;background:var(--sb);transition:background .4s}
-@media (max-width:480px){.st{height:100vh;border-radius:0}}
-.st .bars{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:4px}
-.st .bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
-.st .bars i::after{content:"";display:block;height:100%;width:0;background:#fff}
-.st .bars i.done::after{width:100%}
-.st .bars i.cur::after{animation:fill var(--d,5s) linear forwards}
-@keyframes fill{to{width:100%}}
-.st .who{position:absolute;top:26px;left:16px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
-.st .who span{width:32px;height:32px;border-radius:50%;background:#0b0e14;color:#e2c283;display:grid;place-items:center}
-.st .who .logo-mark{font-size:18px}
-.st .em{font-size:64px;margin-bottom:18px}
-.st h2{font:800 clamp(28px,4.4vw,38px)/1.08 Manrope,Inter,sans-serif;margin:0 0 14px;letter-spacing:-.02em}
-.st p{font-size:18px;margin:0 0 24px;opacity:.92}
-.st .a{align-self:flex-start;background:#fff;color:#111;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;position:relative;z-index:4}
-.st .z{position:absolute;top:60px;bottom:0;border:0;background:none;cursor:pointer;z-index:2}
-.st .z.pv{left:0;width:35%}.st .z.nx{right:0;width:65%}
-.v3-post{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 340px;width:min(900px,100vw - 24px);max-height:90vh;background:#fff;color:var(--ink);border-radius:6px;overflow:hidden}
-@media (max-width:760px){.v3-post{grid-template-columns:1fr;overflow:auto}}
-.v3-post .pv{aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;padding:34px;background:var(--tb);color:var(--tf)}
-.v3-post .pv .logo-mark{font-size:54px;stroke-width:1.3}
-.v3-post .pv b{font:800 clamp(24px,4vw,42px)/1.05 Manrope,sans-serif;text-transform:uppercase}
-.v3-post .pv small{display:block;font:500 15px Inter;opacity:.8;text-transform:none;margin-top:8px}
-.v3-post .side{display:flex;flex-direction:column;border-left:1px solid var(--line);min-height:0}
-.v3-post .side .ph{border-bottom:1px solid var(--line)}
-.v3-post .side .body{padding:16px;font-size:14.5px;flex:1;overflow:auto}
-.v3-post .side .body b{font-weight:600}
-.v3-post .side .body .tags{color:#00376b;display:block;margin-top:10px}
-.v3-post .side .acts{border-top:1px solid var(--line);padding:10px 16px 0}
-.v3-post .side .lk{padding:2px 16px 12px;font-weight:600;font-size:14px}
-.v3-post .side .go{display:flex;gap:8px;padding:0 16px 16px}
-.v3-post .side .go .b{flex:1;text-align:center}
-.v3-post .ph .mini{width:34px;height:34px;border-radius:50%;background:#0b0e14;color:#e2c283;display:grid;place-items:center}
-.v3-post .ph .mini .logo-mark{font-size:20px}
-.v3-post .ph{display:flex;align-items:center;gap:10px;padding:12px 16px;font-weight:600;font-size:14px}
-.v3-post .acts button{border:0;background:none;font-size:24px;cursor:pointer;padding:0}
-.v3-post .acts{display:flex;gap:14px}
-.v3-post .heart.on{color:#ed4956}
-.v3 .heart.on{color:#ed4956}
+.v3{--ink:#f5f5f7;--mut:#86868b;--ac:#2997ff;--mouth:#150a0e;--gum:#d9798a;--r:28px;--fr:14px;--fb:rgba(255,255,255,.22);--fbg:rgba(255,255,255,.07);
+  background:#000;color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5;letter-spacing:-.01em;overflow:visible;overflow-x:clip}
+.v3 h1,.v3 h2,.v3 h3{margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.02}
+.v3 .gt{background:linear-gradient(100deg,#2997ff,#a46bff 50%,#ff7ab6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.v3 nav{position:sticky;top:56px;z-index:60;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
+.v3 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:48px;font-size:13px;gap:16px}
+.v3 .brand{display:flex;align-items:center;gap:8px;font-weight:600;text-decoration:none}
+.v3 .brand .logo-mark{font-size:20px;stroke-width:1.8}
+.v3 nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;color:#d2d2d7}
+.v3 nav ul a{text-decoration:none;transition:.2s}.v3 nav ul a:hover{color:#fff}
+.v3 nav .pill{background:var(--ac);color:#fff;padding:6px 14px;border-radius:999px;font-weight:500;text-decoration:none;transition:.2s}
+.v3 nav .pill:hover{background:#0a84ff}
+@media (max-width:760px){.v3 nav ul{display:none}}
+.v3 .btn{background:var(--ac);color:#fff;padding:14px 28px;font-size:17px;font-weight:500}
+.v3 .btn:hover{background:#0a84ff;transform:scale(1.03)}
+.v3 .lnk{color:var(--ac);text-decoration:none;font-size:19px;font-weight:500;background:none;border:0;cursor:pointer}
+.v3 .lnk:hover{text-decoration:underline}
+.v3 .hero{position:relative;min-height:calc(100vh - 104px);display:grid;place-items:center;text-align:center;padding:60px 0 90px;overflow:hidden;
+  background:radial-gradient(60% 50% at 50% 100%,rgba(41,151,255,.28),transparent 70%),radial-gradient(40% 40% at 80% 20%,rgba(164,107,255,.2),transparent 70%),#000}
+.v3 .hero .eb{font-size:21px;font-weight:600;color:#f5f5f7;margin-bottom:10px}
+.v3 .hero h1{font-size:clamp(46px,10.5vw,148px);letter-spacing:-.055em}
+.v3 .hero h1 span{display:block}
+.v3 .hero p{font-size:clamp(19px,2.3vw,28px);color:#a1a1a6;max-width:640px;margin:26px auto 34px;font-weight:500;letter-spacing:-.02em}
+.v3 .hero .cta{display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap}
+.v3 .orb{position:absolute;width:min(70vw,620px);aspect-ratio:1;left:50%;bottom:-38%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.18),rgba(41,151,255,.1) 40%,transparent 70%);filter:blur(8px);animation:brth 6s ease-in-out infinite alternate;pointer-events:none}
+@keyframes brth{to{transform:translateX(-50%) scale(1.12);opacity:.7}}
+.v3 .tooth3d{position:absolute;right:max(3vw,10px);top:12%;width:clamp(90px,16vw,230px);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out;filter:drop-shadow(0 30px 50px rgba(41,151,255,.45));pointer-events:none;opacity:.95}
+.v3 .tooth3d{animation:flt 7s ease-in-out infinite}
+@keyframes flt{50%{translate:0 -16px}}
+@media (max-width:760px){.v3 .tooth3d{top:3%;opacity:.5}}
+.v3 .story{position:relative;height:420vh;background:#000}
+.v3 .stage{position:sticky;top:104px;height:calc(100vh - 104px);display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;max-width:1180px;margin:0 auto;padding:0 20px}
+@media (max-width:860px){.v3 .story{height:380vh}.v3 .stage{grid-template-columns:1fr;grid-template-rows:auto auto;gap:22px;align-content:start;padding-top:18px}.v3 .mouth{order:-1}.v3 .steps{min-height:230px}}
+.v3 .steps{position:relative;min-height:300px}
+.v3 .stp{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s;pointer-events:none}
+.v3 .stp.on{opacity:1;transform:none;pointer-events:auto}
+.v3 .stp i{font-style:normal;font-size:15px;font-weight:600;color:var(--ac);letter-spacing:.04em;text-transform:uppercase}
+.v3 .stp h2{font-size:clamp(38px,6vw,78px);margin:10px 0 16px}
+.v3 .stp p{font-size:clamp(17px,1.9vw,23px);color:#a1a1a6;max-width:480px;font-weight:500;letter-spacing:-.015em;margin:0}
+.v3 .mouth{border-radius:var(--r);overflow:hidden;aspect-ratio:2/1;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 40px 80px -30px rgba(41,151,255,.45)}
+.v3 .mouth svg{display:block;width:100%;height:100%}
+.v3 .dots{display:flex;gap:10px;margin-top:20px}
+.v3 .dots button{flex:1;max-width:80px;height:4px;border:0;border-radius:2px;background:rgba(255,255,255,.2);cursor:pointer;padding:0;overflow:hidden;position:relative}
+.v3 .dots button::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(var(--f,0));transform-origin:left}
+.v3 .lt{background:#f5f5f7;color:#1d1d1f}
+.v3 .lt .mut{color:#6e6e73}
+.v3 section.pad{padding:clamp(70px,11vw,140px) 0}
+.v3 .h2{font-size:clamp(34px,6vw,80px)}
+.v3 .sub{font-size:clamp(18px,2.2vw,26px);font-weight:500;color:#6e6e73;margin:14px 0 0;max-width:640px;letter-spacing:-.02em}
+.v3 .car-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.v3 .arr{display:flex;gap:10px}
+.v3 .arr button{width:46px;height:46px;border-radius:50%;border:0;background:#e8e8ed;color:#1d1d1f;font-size:20px;cursor:pointer;transition:.2s}
+.v3 .arr button:hover{background:#d2d2d7}
+.v3 .car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(16px,calc((100vw - 1180px)/2)) 30px;scrollbar-width:none;cursor:grab}
+.v3 .car::-webkit-scrollbar{display:none}
+.v3 .car.drag{cursor:grabbing;scroll-snap-type:none}
+.v3 .cd{flex:none;width:min(340px,80vw);height:460px;border-radius:30px;padding:30px;scroll-snap-align:center;display:flex;flex-direction:column;justify-content:space-between;color:var(--cf,#fff);background:var(--cb);position:relative;overflow:hidden;user-select:none;transition:transform .35s}
+.v3 .cd:hover{transform:scale(1.02)}
+.v3 .cd small{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.v3 .cd h3{font-size:34px;margin:10px 0 12px}
+.v3 .cd p{margin:0;font-size:17px;opacity:.85;font-weight:500;letter-spacing:-.015em}
+.v3 .cd .logo-mark{position:absolute;right:-30px;bottom:50px;width:190px;height:190px;opacity:.14;stroke-width:.6}
+.v3 .cd button{align-self:flex-start;border:0;border-radius:999px;padding:10px 20px;font-weight:600;font-size:15px;cursor:pointer;background:var(--cf,#fff);color:var(--cb);position:relative;z-index:2}
+.v3 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+@media (max-width:760px){.v3 .nums{grid-template-columns:1fr}}
+.v3 .nums b{display:block;font-size:clamp(56px,9vw,120px);font-weight:700;letter-spacing:-.055em;line-height:1}
+.v3 .nums span{display:block;color:#a1a1a6;font-size:19px;font-weight:500;margin-top:8px}
+.v3 .ba{--r:28px;box-shadow:0 30px 70px -30px rgba(0,0,0,.35)}
+.v3 .ba-note{color:#6e6e73;text-align:center}
+.v3 .faq details{border-bottom:1px solid #d2d2d7}
+.v3 .faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:clamp(20px,2.6vw,30px);font-weight:600;letter-spacing:-.03em}
+.v3 .faq summary::after{content:"+";font-size:34px;font-weight:300;color:#6e6e73;transition:.3s;flex:none}
+.v3 .faq details[open] summary::after{transform:rotate(45deg)}
+.v3 .faq p{margin:0 0 26px;font-size:19px;color:#6e6e73;max-width:720px;font-weight:500}
+.v3 .cta-s{text-align:center;background:radial-gradient(50% 60% at 50% 110%,rgba(41,151,255,.35),transparent 70%),#000}
+.v3 .cta-s h2{font-size:clamp(40px,8vw,108px);letter-spacing:-.05em}
+.v3 .cta-s .tel{display:inline-block;margin:26px 0 8px;font-size:clamp(24px,3.4vw,40px);font-weight:600;color:var(--ac);text-decoration:none;letter-spacing:-.03em}
+.v3 .cta-s p{color:#a1a1a6;font-size:19px;margin:0 0 40px}
+.v3 .cta-s form{max-width:460px;margin:0 auto;text-align:left;background:#111113;border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:28px}
+.v3 .cta-s form .btn{width:100%}
+.v3 .cta-s select option{color:#000}
+.v3 footer{padding:26px 16px 36px;text-align:center;font-size:13px;color:#6e6e73;background:#000;border-top:1px solid rgba(255,255,255,.1)}
+.v3 footer a{color:#a1a1a6}
 </style>
 </head>
 <body>
@@ -316,7 +300,7 @@ form.bf .f{margin-bottom:14px}
   <div class="sw-tabs">
     <button role="tab" data-v="v1" aria-selected="true"><b>1</b>Люкс</button>
     <button role="tab" data-v="v2" aria-selected="false"><b>2</b>Свежий</button>
-    <button role="tab" data-v="v3" aria-selected="false"><b>3</b>Сторис</button>
+    <button role="tab" data-v="v3" aria-selected="false"><b>3</b>Кино</button>
   </div>
   <span class="sw-hint">клавиши 1 · 2 · 3</span>
 </header>
@@ -495,82 +479,87 @@ form.bf .f{margin-bottom:14px}
   <footer>© Dr.Batraliev Clinic · Концепт дизайна · вариант 2</footer>
 </main>
 
-<!-- ============ ВАРИАНТ 3 — СТОРИС (стиль Instagram) ============ -->
+<!-- ============ ВАРИАНТ 3 — КИНО (сторителлинг на скролле) ============ -->
 <main class="v v3" id="v3" hidden>
-  <div class="ig">
-    <header class="prof">
-      <div class="ava" aria-hidden="true"><div><svg class="logo-mark"><use href="#tooth"/></svg></div></div>
+  <nav><div class="wrap">
+    <a class="brand" href="#v3"><svg class="logo-mark"><use href="#tooth"/></svg>Dr.Batraliev Clinic</a>
+    <ul><li><a href="#v3-story">Как это работает</a></li><li><a href="#v3-svc">Услуги</a></li><li><a href="#v3-ba">Результаты</a></li><li><a href="#v3-faq">Вопросы</a></li></ul>
+    <a class="pill" href="#v3-book">Записаться</a>
+  </div></nav>
+
+  <header class="hero">
+    <div class="orb" aria-hidden="true"></div>
+    <svg class="tooth3d" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#bcd9ff"/><stop offset="1" stop-color="#5aa8ff"/></linearGradient></defs><path fill="url(#tg)" d="M7 3C4.500 3 3 5 3 7.500c0 2 .8 3.300 1.300 5.200.6 2.300.7 8.300 2.700 8.300 1.600 0 1.400-4.500 3-4.500h4c1.600 0 1.400 4.500 3 4.500 2 0 2.100-6 2.700-8.300.5-1.900 1.300-3.200 1.300-5.200C21 5 19.500 3 17 3c-1.800 0-2.700 1-5 1S8.800 3 7 3z"/></svg>
+    <div class="wrap" style="position:relative">
+      <div class="eb rv">Dr.Batraliev Clinic · Бишкек</div>
+      <h1 class="rv"><span>Эстетика.</span><span>Технологии.</span><span class="gt">Совершенство.</span></h1>
+      <p class="rv">Ортодонтия, в которой каждый этап виден и понятен — от первой диагностики до готовой улыбки.</p>
+      <div class="cta rv"><a class="btn" href="#v3-book">Записаться на консультацию</a><a class="lnk" href="#v3-story">Смотреть, как это работает ›</a></div>
+    </div>
+  </header>
+
+  <section class="story" id="v3-story" data-story>
+    <div class="stage">
       <div>
-        <div class="l1">
-          <h1>dr.batraliev <i>✓</i></h1>
-          <a class="b pr" href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">Подписаться</a>
-          <a class="b" href="https://wa.me/996555609609" target="_blank" rel="noopener">Сообщение</a>
-          <a class="b" href="tel:+996555609609">Связаться</a>
+        <div class="steps">
+          <div class="stp on"><i>Шаг 1</i><h2>Диагностика</h2><p>Начинаем с данных. Телерентген, фото и анализ прикуса показывают то, чего не видно глазом.</p></div>
+          <div class="stp"><i>Шаг 2</i><h2>План</h2><p>Вы видите путь заранее. Каждый этап лечения продуман и объяснён — без сюрпризов.</p></div>
+          <div class="stp"><i>Шаг 3</i><h2>Лечение</h2><p>Брекеты или элайнеры — система подобрана именно под вас. Контроль на каждом визите.</p></div>
+          <div class="stp"><i>Шаг 4</i><h2 class="gt">Результат</h2><p>Ровная, здоровая улыбка. А ретенция помогает сохранить её надолго.</p></div>
         </div>
-        <ul class="stats"><li><b data-count="271">0</b> публикации</li><li><b data-count="55" data-suf=" тыс.">0</b> подписчики</li><li><b>216</b> подписки</li></ul>
-        <div class="bio">
-          <strong>ОРТОДОНТ БРЕКЕТЫ БИШКЕК</strong>
-          Dr.Batraliev Clinic<br>Эстетика.<br>Технологии.<br>Совершенство.<br>
-          📞 0555609609
-          <a href="https://www.google.com/maps/search/?api=1&query=117+ул.+Медерова+Бишкек" target="_blank" rel="noopener">117 ул. Медерова, Bishkek, Kyrgyzstan</a>
-          <a href="https://wa.me/996555609609" target="_blank" rel="noopener">🔗 wa.me/996555609609</a>
-        </div>
+        <div class="dots"><button aria-label="Шаг 1"></button><button aria-label="Шаг 2"></button><button aria-label="Шаг 3"></button><button aria-label="Шаг 4"></button></div>
       </div>
-    </header>
-
-    <div class="hls" role="list" aria-label="Актуальное">
-      <button class="hl" data-st="otz"><span><i style="--hb:linear-gradient(135deg,#ffd6e7,#ffb199)">💬</i></span>Отзывы</button>
-      <button class="hl" data-st="exc"><span><i style="--hb:linear-gradient(135deg,#1c2541,#4f5bff)">✨</i></span>Exclusive</button>
-      <button class="hl" data-st="gde"><span><i style="--hb:linear-gradient(135deg,#d3f2e0,#8fd3b6)">📍</i></span>Где мы?</button>
-      <button class="hl" data-st="vop"><span><i style="--hb:linear-gradient(135deg,#fff1c2,#ffcf70)">❓</i></span>Вопросы?</button>
-      <button class="hl" data-st="kl"><span><i style="--hb:linear-gradient(135deg,#e7e9ef,#aab3c5)">🏥</i></span>Клиника</button>
+      <div class="mouth" data-mouth aria-label="Анимация: зубы выравниваются по мере прокрутки"></div>
     </div>
+  </section>
 
-    <div class="tabs" role="tablist" data-v3tabs>
-      <button role="tab" aria-selected="true" data-p="svc">▦ Услуги</button>
-      <button role="tab" aria-selected="false" data-p="res">▶ Результаты</button>
-      <button role="tab" aria-selected="false" data-p="rec">✉ Запись</button>
+  <section class="lt pad" id="v3-svc" style="padding-bottom:40px">
+    <div class="wrap car-h rv">
+      <div><h2 class="h2">Выберите свой путь.</h2><p class="sub">Листайте или тяните карточки.</p></div>
+      <div class="arr"><button data-car="-1" aria-label="Назад">‹</button><button data-car="1" aria-label="Вперёд">›</button></div>
     </div>
+    <div class="car" data-car-box>
+      <article class="cd" style="--cb:#0071e3"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>01</small><h3>Брекеты</h3><p>Металлические, керамические и сапфировые системы под ваш прикус.</p></div><button data-svc="Брекеты">Записаться</button></article>
+      <article class="cd" style="--cb:#1d1d1f"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>02</small><h3>Элайнеры</h3><p>Прозрачные капы — почти незаметное выравнивание.</p></div><button data-svc="Элайнеры">Записаться</button></article>
+      <article class="cd" style="--cb:#ffd60a;--cf:#1d1d1f"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>03</small><h3>Детская ортодонтия</h3><p>Мягко и вовремя направляем рост челюстей.</p></div><button data-svc="Детская ортодонтия">Записаться</button></article>
+      <article class="cd" style="--cb:#6e3cf0"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>04</small><h3>Диагностика</h3><p>Телерентген, КТ и фотопротокол — точный план до начала.</p></div><button data-svc="Диагностика">Записаться</button></article>
+      <article class="cd" style="--cb:#ff375f"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>05</small><h3>Эстетика</h3><p>Виниры и реставрации с естественной формой и цветом.</p></div><button data-svc="Эстетика улыбки">Записаться</button></article>
+      <article class="cd" style="--cb:#30b27a"><svg class="logo-mark"><use href="#tooth"/></svg><div><small>06</small><h3>Ретенция</h3><p>Ретейнеры и контроль — результат остаётся надолго.</p></div><button data-svc="Первичная консультация">Записаться</button></article>
+    </div>
+  </section>
 
-    <section class="pn on" data-pn="svc"><div class="gr" data-grid></div></section>
+  <section class="pad" style="background:#000"><div class="wrap nums">
+    <div class="rv"><b class="gt" data-count="55" data-suf=" тыс.">0</b><span>подписчиков в Instagram</span></div>
+    <div class="rv"><b class="gt" data-count="271">0</b><span>публикаций с результатами</span></div>
+    <div class="rv"><b class="gt">1:1</b><span>индивидуальный план</span></div>
+  </div></section>
 
-    <section class="pn" data-pn="res">
-      <article class="card">
-        <div class="ph"><span class="mini"><svg class="logo-mark"><use href="#tooth"/></svg></span><div>dr.batraliev<small>Результаты лечения</small></div></div>
-        <div class="ba" data-ba></div>
-        <div class="acts"><button class="heart" aria-label="Нравится">♡</button><button aria-label="Написать" onclick="document.querySelector('.v3 [data-p=rec]').click()">💬</button></div>
-        <div class="cap"><b>dr.batraliev</b> Потяните ползунок — так выглядит путь от неровных зубов к ровной улыбке. Реальные кейсы смотрите в нашем Instagram.<span class="tags">#брекеты #ортодонт #бишкек #улыбка</span></div>
-      </article>
-    </section>
+  <section class="lt pad" id="v3-ba"><div class="wrap" style="max-width:980px">
+    <div class="rv" style="text-align:center;margin-bottom:44px"><h2 class="h2">Разница видна.</h2><p class="sub" style="margin-inline:auto">Потяните ползунок, чтобы сравнить.</p></div>
+    <div class="ba rv" data-ba></div>
+    <p class="ba-note">Иллюстрация. Здесь будут реальные кейсы клиники.</p>
+  </div></section>
 
-    <section class="pn" data-pn="rec">
-      <article class="card">
-        <div class="ph"><span class="mini"><svg class="logo-mark"><use href="#tooth"/></svg></span><div>Запись на консультацию<small>Ответим в WhatsApp</small></div></div>
-        <form class="bf" data-wa>
-          <div class="f"><label>Ваше имя</label><input name="name" required autocomplete="name"></div>
-          <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
-          <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Детская ортодонтия</option><option>Диагностика</option><option>Эстетика улыбки</option><option>Первичная консультация</option></select></div>
-          <button class="b pr">Отправить в WhatsApp</button>
-        </form>
-        <div class="ct"><a class="b" href="tel:+996555609609">📞 Позвонить</a><a class="b" href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener">📷 Instagram</a></div>
-      </article>
-    </section>
-  </div>
-  <footer>© Dr.Batraliev Clinic · 117 ул. Медерова, Бишкек · Концепт дизайна · вариант 3</footer>
+  <section class="lt pad faq" id="v3-faq" style="padding-top:0"><div class="wrap" style="max-width:900px">
+    <h2 class="h2 rv" style="margin-bottom:30px">Вопросы.</h2>
+    <details><summary>Больно ли носить брекеты?</summary><p>В первые дни возможен дискомфорт — он проходит. Врач подскажет, как его смягчить.</p></details>
+    <details><summary>Сколько длится лечение?</summary><p>От нескольких месяцев до двух лет. Точный срок назовём после диагностики.</p></details>
+    <details><summary>С какого возраста начинать?</summary><p>Консультацию стоит пройти уже в детском возрасте — иногда вовремя начатая коррекция упрощает всё дальнейшее лечение.</p></details>
+    <details><summary>Нужна ли предварительная запись?</summary><p>Да, приём по записи. Напишите в WhatsApp или позвоните.</p></details>
+  </div></section>
 
-  <div class="v3-ov" id="v3-st" hidden role="dialog" aria-modal="true" aria-label="История">
-    <button class="v3-x" aria-label="Закрыть">×</button>
-    <div class="st"><div class="bars"></div><div class="who"><span><svg class="logo-mark"><use href="#tooth"/></svg></span><em style="font-style:normal"></em></div><div class="body"></div><button class="z pv" aria-label="Назад"></button><button class="z nx" aria-label="Дальше"></button></div>
-  </div>
-  <div class="v3-ov" id="v3-po" hidden role="dialog" aria-modal="true" aria-label="Публикация">
-    <button class="v3-x" aria-label="Закрыть">×</button>
-    <div class="v3-post"><div class="pv"><svg class="logo-mark"><use href="#tooth"/></svg><div><b></b><small></small></div></div>
-      <div class="side"><div class="ph"><span class="mini"><svg class="logo-mark"><use href="#tooth"/></svg></span>dr.batraliev</div>
-        <div class="body"></div>
-        <div class="acts"><button class="heart" aria-label="Нравится">♡</button></div><div class="lk"></div>
-        <div class="go"><button class="b pr" data-book>Записаться</button><a class="b" href="https://wa.me/996555609609" target="_blank" rel="noopener">WhatsApp</a></div>
-      </div></div>
-  </div>
+  <section class="cta-s pad" id="v3-book"><div class="wrap">
+    <h2 class="rv">Начните<br><span class="gt">с консультации.</span></h2>
+    <a class="tel rv" href="tel:+996555609609">0555 609 609</a>
+    <p class="rv">117 ул. Медерова, Бишкек · <a href="https://instagram.com/dr.batraliev" target="_blank" rel="noopener" style="color:inherit">@dr.batraliev</a></p>
+    <form class="bf rv" data-wa>
+      <div class="f"><label>Ваше имя</label><input name="name" required autocomplete="name"></div>
+      <div class="f"><label>Телефон</label><input name="phone" type="tel" required autocomplete="tel" placeholder="+996"></div>
+      <div class="f"><label>Что интересует</label><select name="service"><option>Брекеты</option><option>Элайнеры</option><option>Детская ортодонтия</option><option>Диагностика</option><option>Эстетика улыбки</option><option>Первичная консультация</option></select></div>
+      <button class="btn">Отправить в WhatsApp</button>
+    </form>
+  </div></section>
+  <footer>© Dr.Batraliev Clinic · Концепт дизайна · вариант 3</footer>
 </main>
 
 <script>
@@ -589,6 +578,7 @@ form.bf .f{margin-bottom:14px}
     try{history.replaceState(null,'','#'+id)}catch(e){}
     if(!noScroll)window.scrollTo({top:0,behavior:'auto'});
     observe();
+    if(window.__v3upd)window.__v3upd();
     $$('[data-count]',document.getElementById(id)).forEach(function(el){if(!el.closest('.rv'))count(el)});
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.v)})});
@@ -636,99 +626,64 @@ form.bf .f{margin-bottom:14px}
     })});
   });
 
-  /* --- вариант 3: сторис, сетка постов, вкладки --- */
+  /* --- вариант 3: «Кино» — зубы выравниваются при прокрутке --- */
   (function(){
     var root=$('#v3');if(!root)return;
-    var ST={
-      otz:{n:'Отзывы',s:[
-        {bg:'linear-gradient(160deg,#ff8a9b,#c13584)',e:'💬',h:'Отзывы пациентов',p:'Истории улыбок, которыми делятся наши пациенты, мы собираем в актуальном Instagram.'},
-        {bg:'linear-gradient(160deg,#4f5bff,#8a2be2)',e:'😁',h:'Лучший отзыв — результат',p:'Фото до и после и живые комментарии — в профиле клиники.',a:['Открыть Instagram','https://instagram.com/dr.batraliev']}]},
-      exc:{n:'Exclusive',s:[
-        {bg:'linear-gradient(160deg,#141a33,#4f5bff)',e:'🧬',h:'Цифровая диагностика',p:'Телерентген, КТ и фотопротокол: план лечения строится на точных данных.'},
-        {bg:'linear-gradient(160deg,#0f3d3a,#18a999)',e:'🫧',h:'Элайнеры',p:'Прозрачные капы — почти незаметное выравнивание зубов.'},
-        {bg:'linear-gradient(160deg,#3b2a14,#c9a45c)',e:'💎',h:'Эстетика улыбки',p:'Форма, цвет и симметрия, которые выглядят естественно.'}]},
-      gde:{n:'Где мы?',s:[
-        {bg:'linear-gradient(160deg,#0f5c4a,#5cc9a7)',e:'📍',h:'Мы в центре Бишкека',p:'117 ул. Медерова, Бишкек, Кыргызстан.'},
-        {bg:'linear-gradient(160deg,#1f3a5f,#4f5bff)',e:'🚗',h:'Приезжайте по записи',p:'Напишите в WhatsApp или позвоните: 0555 609 609.',a:['Открыть на карте','https://www.google.com/maps/search/?api=1&query=117+ул.+Медерова+Бишкек']}]},
-      vop:{n:'Вопросы?',s:[
-        {bg:'linear-gradient(160deg,#ffb347,#ff7e5f)',e:'😬',h:'Больно ли носить брекеты?',p:'В первые дни возможен дискомфорт — он проходит. Врач подскажет, как его смягчить.'},
-        {bg:'linear-gradient(160deg,#6a5acd,#4f5bff)',e:'⏳',h:'Сколько длится лечение?',p:'От нескольких месяцев до двух лет — точный срок скажем после диагностики.'},
-        {bg:'linear-gradient(160deg,#11998e,#38ef7d)',e:'👧',h:'С какого возраста?',p:'Консультацию стоит пройти уже в детском возрасте. Приём по записи.',a:['Записаться','#book']}]},
-      kl:{n:'Клиника',s:[
-        {bg:'linear-gradient(160deg,#0b0e14,#2a3550)',e:'🏛️',h:'Мрамор и мягкий свет',p:'Просторный холл, светлые полы, зелень и спокойные тона.'},
-        {bg:'linear-gradient(160deg,#16213e,#4f5bff)',e:'🪴',h:'Атмосфера без стресса',p:'Здесь приятно ждать приёма и спокойно лечиться — от детей до взрослых.'}]}
-    };
-    var TL=[
-      {k:'num',t:'У нас новый номер',s:'0555 609 609',tb:'#0b0e14',tf:'#fff',n:'1,2 тыс.',txt:'Теперь связаться с нами проще: звоните или пишите в WhatsApp по новому номеру 0555 609 609.',tags:'#новыйномер #drbatraliev',svc:'Первичная консультация'},
-      {k:'br',t:'Брекеты',s:'металл · керамика · сапфир',tb:'#4f5bff',tf:'#fff',n:'3,4 тыс.',txt:'Металлические, керамические и сапфировые системы. Подбираем под ваш прикус и образ жизни.',tags:'#брекеты #ортодонт #бишкек',svc:'Брекеты'},
-      {k:'al',t:'Элайнеры',s:'почти незаметно',tb:'#d8f4ee',tf:'#0f3d3a',n:'2,1 тыс.',txt:'Прозрачные капы выравнивают зубы почти незаметно для окружающих.',tags:'#элайнеры #невидимыебрекеты',svc:'Элайнеры'},
-      {k:'kd',t:'Детская ортодонтия',s:'мягко и вовремя',tb:'#ffe3a8',tf:'#4a3000',n:'1,8 тыс.',txt:'Корректируем прикус вовремя, бережно и без стресса для ребёнка.',tags:'#детскийортодонт #прикус',svc:'Детская ортодонтия'},
-      {k:'dg',t:'Диагностика',s:'телерентген · КТ · фото',tb:'#10131c',tf:'#9fd0ff',n:'2,7 тыс.',txt:'Телерентген, КТ и фотопротокол — точный план лечения ещё до начала.',tags:'#цефалометрия #диагностика',svc:'Диагностика'},
-      {k:'es',t:'Эстетика',s:'виниры · реставрации',tb:'#fde2ea',tf:'#7a1f3d',n:'2,2 тыс.',txt:'Виниры и реставрации: форма, цвет и симметрия, которые выглядят естественно.',tags:'#виниры #эстетика #улыбка',svc:'Эстетика улыбки'},
-      {k:'rt',t:'Ретенция',s:'закрепляем результат',tb:'#e8e4ff',tf:'#2b2175',n:'1,3 тыс.',txt:'Ретейнеры и контроль — чтобы результат остался с вами надолго.',tags:'#ретейнер #результат',svc:'Первичная консультация'},
-      {k:'kl',t:'Наша клиника',s:'эстетика · технологии',tb:'linear-gradient(135deg,#1c2541,#3a4a7a)',tf:'#fff',n:'4,0 тыс.',txt:'Мрамор, мягкий свет и зелень — пространство, в котором приятно лечиться.',tags:'#drbatralievclinic #клиника',svc:'Первичная консультация'},
-      {k:'cn',t:'Первый визит',s:'осмотр и план',tb:'#c8f169',tf:'#1b2a00',n:'2,5 тыс.',txt:'Знакомимся, смотрим прикус и составляем понятный план лечения. Запись — в WhatsApp.',tags:'#консультация #бишкек',svc:'Первичная консультация'}
-    ];
-    var ovS=$('#v3-st'),ovP=$('#v3-po'),tmr=null,cur=null,idx=0;
-    function lock(on){document.body.style.overflow=on?'hidden':''}
-    function closeAll(){ovS.hidden=true;ovP.hidden=true;clearTimeout(tmr);lock(false)}
-    window.__closeV3=closeAll;
-    /* сетка */
-    var grid=$('[data-grid]',root);
-    TL.forEach(function(t,i){
-      var b=document.createElement('button');b.className='tl';b.style.setProperty('--tb',t.tb);b.style.setProperty('--tf',t.tf);b.dataset.n=t.n;
-      b.innerHTML='<svg class="logo-mark"><use href="#tooth"/></svg><b></b>';
-      var bb=$('b',b);bb.textContent=t.t;var sm=document.createElement('small');sm.textContent=t.s;bb.appendChild(sm);
-      b.addEventListener('click',function(){openPost(t)});grid.appendChild(b);
-    });
-    /* пост */
-    var curSvc='';
-    function openPost(t){
-      curSvc=t.svc;var pv=$('.pv',ovP);pv.style.setProperty('--tb',t.tb);pv.style.setProperty('--tf',t.tf);
-      $('b',pv).textContent=t.t;var sm=document.createElement('small');sm.textContent=t.s;$('b',pv).appendChild(sm);
-      var body=$('.body',ovP);body.innerHTML='';var b=document.createElement('b');b.textContent='dr.batraliev ';body.appendChild(b);body.appendChild(document.createTextNode(t.txt));var tg=document.createElement('span');tg.className='tags';tg.textContent=t.tags;body.appendChild(tg);
-      var h=$('.heart',ovP);h.classList.remove('on');h.textContent='♡';$('.lk',ovP).textContent='Нравится: '+t.n;
-      ovP.hidden=false;lock(true);
+    /* объёмный зуб в шапке следит за курсором */
+    var hero=$('.hero',root),tooth=$('.tooth3d',root);
+    hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tooth.style.setProperty('--ry',(x*40)+'deg');tooth.style.setProperty('--rx',(-y*30)+'deg')});
+    hero.addEventListener('pointerleave',function(){tooth.style.setProperty('--ry','0deg');tooth.style.setProperty('--rx','0deg')});
+    /* рот с анимируемыми зубами */
+    var NS='http://www.w3.org/2000/svg',host=$('[data-mouth]',root),teethList=[];
+    var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 400 200');svg.setAttribute('preserveAspectRatio','xMidYMid slice');
+    svg.innerHTML='<rect width="400" height="200" fill="var(--mouth)"/><path d="M0 0H400V62C340 84 260 90 200 90S60 84 0 62Z" fill="var(--gum)"/><path d="M0 200V150C60 170 140 176 200 176S340 170 400 150V200Z" fill="var(--gum)"/>';
+    host.appendChild(svg);
+    function mk(w,h,gx,gy,bx,by,br,bad){
+      var r=document.createElementNS(NS,'rect');r.setAttribute('x',-w/2);r.setAttribute('y',-h/2);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('rx',w*.38);r.setAttribute('stroke','rgba(0,0,0,.18)');svg.appendChild(r);
+      teethList.push({r:r,gx:gx,gy:gy,bx:bx,by:by,br:br,bad:bad});
     }
-    $('.heart',ovP).addEventListener('click',function(){this.classList.toggle('on');this.textContent=this.classList.contains('on')?'♥':'♡'});
-    $$('.heart',root).forEach(function(h){h.addEventListener('click',function(){h.classList.toggle('on');h.textContent=h.classList.contains('on')?'♥':'♡'})});
-    $('[data-book]',ovP).addEventListener('click',function(){
-      closeAll();tab('rec');var s=$('select[name=service]',root);
-      $$('option',s).forEach(function(o){if(o.textContent===curSvc)s.value=o.value});
-      root.scrollIntoView();window.scrollTo({top:0});
-    });
-    /* вкладки */
-    function tab(p){
-      $$('[data-v3tabs] button',root).forEach(function(x){x.setAttribute('aria-selected',x.dataset.p===p)});
-      $$('.pn',root).forEach(function(x){x.classList.toggle('on',x.dataset.pn===p)});
+    var W=[34,38,46,50,50,46,38,34],rot=[-13,9,-17,14,-9,19,-11,13],dy=[7,-5,11,-9,6,-11,8,-4],dx=[-5,6,-9,7,-4,9,-6,4],x=200-W.reduce(function(a,b){return a+b},0)/2;
+    W.forEach(function(w,i){var h=i>1&&i<6?66:58,cx=x+w/2,arc=Math.pow((i-3.5)/3.5,2)*12,cy=66+h/2+arc;mk(w,h,cx,cy,cx+dx[i],cy+dy[i],rot[i],i%2?[234,220,174]:[239,228,192]);x+=w});
+    var L=[26,28,30,30,30,30,28,26],lr=[10,-12,8,-6,11,-9,13,-8],ly=[-4,5,-7,6,-3,8,-6,4],lx=200-L.reduce(function(a,b){return a+b},0)/2;
+    L.forEach(function(w,i){var h=44,cx=lx+w/2,arc=Math.pow((i-3.5)/3.5,2)*10,cy=176-h/2-arc;mk(w,h,cx,cy,cx,cy+ly[i],lr[i],[230,216,168]);lx+=w});
+    var good=[251,251,247];
+    function paint(t){
+      teethList.forEach(function(o){
+        var cx=o.bx+(o.gx-o.bx)*t,cy=o.by+(o.gy-o.by)*t,r=o.br*(1-t);
+        o.r.setAttribute('transform','translate('+cx+' '+cy+') rotate('+r+')');
+        o.r.setAttribute('fill','rgb('+o.bad.map(function(c,k){return Math.round(c+(good[k]-c)*t)}).join(',')+')');
+      });
     }
-    $$('[data-v3tabs] button',root).forEach(function(b){b.addEventListener('click',function(){tab(b.dataset.p)})});
-    /* сторис */
-    var st=$('.st',ovS),bars=$('.bars',st),body=$('.body',st),who=$('.who em',st);
-    function slide(){
-      var d=ST[cur],s=d.s[idx];st.style.setProperty('--sb',s.bg);who.textContent=d.n;
-      bars.innerHTML='';d.s.forEach(function(_,i){var x=document.createElement('i');x.className=i<idx?'done':i===idx?'cur':'';bars.appendChild(x)});
-      body.innerHTML='';
-      var e=document.createElement('div');e.className='em';e.textContent=s.e;var h=document.createElement('h2');h.textContent=s.h;var p=document.createElement('p');p.textContent=s.p;
-      body.appendChild(e);body.appendChild(h);body.appendChild(p);
-      if(s.a){var a=document.createElement('a');a.className='a';a.textContent=s.a[0];
-        if(s.a[1]==='#book'){a.href='#';a.addEventListener('click',function(ev){ev.preventDefault();closeAll();tab('rec');window.scrollTo({top:0})})}
-        else{a.href=s.a[1];a.target='_blank';a.rel='noopener'}
-        body.appendChild(a)}
-      clearTimeout(tmr);tmr=setTimeout(next,5000);
+    paint(0);
+    /* прокрутка → шаги и прогресс */
+    var story=$('[data-story]',root),stps=$$('.stp',story),dots=$$('.dots button',story),last=-1;
+    function upd(){
+      if(root.hidden)return;
+      var r=story.getBoundingClientRect(),h=story.offsetHeight-(window.innerHeight-104);
+      var p=Math.max(0,Math.min(1,-r.top/Math.max(1,h)));
+      var t=Math.max(0,Math.min(1,(p-.08)/.8));t=t*t*(3-2*t);paint(t);
+      var i=Math.min(3,Math.floor(p*4));
+      if(i!==last){last=i;stps.forEach(function(s,k){s.classList.toggle('on',k===i)})}
+      dots.forEach(function(d,k){d.style.setProperty('--f',Math.max(0,Math.min(1,p*4-k)))});
     }
-    function next(){if(idx<ST[cur].s.length-1){idx++;slide()}else closeAll()}
-    function prev(){if(idx>0){idx--;slide()}else slide()}
-    $('.nx',st).addEventListener('click',next);$('.pv',st).addEventListener('click',prev);
-    $$('.hl',root).forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.st;idx=0;ovS.hidden=false;lock(true);slide()})});
-    [ovS,ovP].forEach(function(o){
-      $('.v3-x',o).addEventListener('click',closeAll);
-      o.addEventListener('click',function(e){if(e.target===o)closeAll()});
-    });
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape')closeAll();
-      if(!ovS.hidden){if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev()}
-    });
+    window.__v3upd=upd;
+    window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);
+    dots.forEach(function(d,k){d.addEventListener('click',function(){
+      var top=story.getBoundingClientRect().top+window.pageYOffset,h=story.offsetHeight-(window.innerHeight-104);
+      window.scrollTo({top:top+h*((k+.5)/4),behavior:'smooth'});
+    })});
+    /* карусель услуг */
+    var box=$('[data-car-box]',root);
+    $$('[data-car]',root).forEach(function(b){b.addEventListener('click',function(){box.scrollBy({left:+b.dataset.car*360,behavior:'smooth'})})});
+    var down=false,sx=0,sl=0,moved=false;
+    box.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.target.closest('button'))return;down=true;moved=false;sx=e.clientX;sl=box.scrollLeft});
+    window.addEventListener('pointermove',function(e){if(!down)return;var d=e.clientX-sx;if(Math.abs(d)>4){moved=true;box.classList.add('drag')}box.scrollLeft=sl-d});
+    window.addEventListener('pointerup',function(){down=false;box.classList.remove('drag')});
+    $$('[data-svc]',root).forEach(function(b){b.addEventListener('click',function(){
+      var s=$('select[name=service]',root);$$('option',s).forEach(function(o){if(o.textContent===b.dataset.svc)s.value=o.value});
+      $('#v3-book').scrollIntoView({behavior:'smooth'});
+    })});
+    upd();
   })();
 
   /* --- запись через WhatsApp --- */
